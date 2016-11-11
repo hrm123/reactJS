@@ -170,49 +170,39 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Code Generation\DatacontextRepository.cs">
-      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Code Generation\IDatacontextRepository.cs">
-      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Code Generation\Repository.cs">
-      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Code Generation\RepositoryGenerator.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Code Generation\UnitofWork.cs">
-      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ToDosController.cs" />
     <Compile Include="DAL\EntityBase.cs" />
     <Compile Include="DAL\IdentityGenerator.cs" />
+    <Compile Include="DAL\IMainUnitOfWork.cs" />
+    <Compile Include="DAL\IQueryableUnitOfWork.cs" />
     <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\ISql.cs" />
     <Compile Include="DAL\IUnitofWork.cs" />
+    <Compile Include="DAL\MainBCUnitOfWork.cs" />
+    <Compile Include="DAL\ToDo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\datacontext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Messages1.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Code Generation\RepositoryGenerator.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RepositoryGenerator.cs</LastGenOutput>
-    </Content>
+    <Content Include="AppScripts\TodosApp.js" />
+    <Content Include="AppScripts\ToDosController.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Code Generation\T4Helper.ttinclude" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -253,6 +243,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
