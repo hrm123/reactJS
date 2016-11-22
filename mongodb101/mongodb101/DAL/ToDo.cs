@@ -7,6 +7,7 @@ namespace mongodb101.DAL
 {
     public class ToDo : EntityBase
     {
+        public string TaskDescription {get;set;}
 
     }
 }

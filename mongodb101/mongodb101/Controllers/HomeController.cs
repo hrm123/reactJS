@@ -20,9 +20,9 @@ namespace mongodb101.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Add()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Add new Todo.";
 
             return View();
         }

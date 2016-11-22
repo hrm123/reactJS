@@ -4,15 +4,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using mongodb101.DAL;
 
 namespace mongodb101.Controllers
 {
     public class ToDosController : ApiController
     {
         // GET: api/ToDos
-        public IEnumerable<string> Get()
+        public IEnumerable<ToDo> Get()
         {
-            return new string[] { "value1", "value2" };
+            return (new ToDo[] { new ToDo { TaskDescription="task1" },new ToDo { TaskDescription = "task2" } }).AsEnumerable<ToDo>();
         }
 
         // GET: api/ToDos/5
@@ -20,7 +21,7 @@ namespace mongodb101.Controllers
         {
             return "value";
         }
-
+        
         // POST: api/ToDos
         public void Post([FromBody]string value)
         {

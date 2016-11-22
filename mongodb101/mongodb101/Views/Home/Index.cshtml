@@ -3,6 +3,8 @@
 }
 <div ng-app="todosApp">
     <div ng-controller="todosCtrl">
-
+        <ul ng-repeat="item in Todos">
+            <li>{{::item.TaskDescription}}</li>
+        </ul>
     </div>
 </div>
