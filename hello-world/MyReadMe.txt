@@ -1,0 +1,1 @@
+- npm stat in the commoand prompt to run this website in browser.
