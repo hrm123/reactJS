@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Courses from './courses';
 import Courses1 from './courses1'
+import Courses2 from './courses2'
 class App extends Component {
   render() {
     return (
@@ -16,6 +17,7 @@ class App extends Component {
         </p>
         <Courses date={new Date()}/>
         <Courses1 date={new Date()}/>
+        <Courses2 date={new Date()}/>
       </div>
     );
   }
