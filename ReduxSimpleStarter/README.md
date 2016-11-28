@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# You tube search app using React (No redux since no local state)
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 

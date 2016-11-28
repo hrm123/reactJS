@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# A book main-detail UI with React-Redux
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 
