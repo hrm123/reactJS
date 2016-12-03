@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux'; 
 
-
-export default class WeatherList extends Component {
+class WeatherList extends Component {
 
     constructor(props){
         super(props);
@@ -29,6 +30,8 @@ export default class WeatherList extends Component {
                 <thead>
                     <tr>
                         <th>City</th>
+                        <th>Pressure</th>
+                        <th>Humidity</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,3 +42,11 @@ export default class WeatherList extends Component {
 
     
 }
+
+
+function mapStateToProps({weather}){
+    return { weather }; //{ weather } === {weather: weather}
+}
+
+
+export default connect(mapStateToProps)(WeatherList);
