@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import { Sparklines, SparklinesLine} from 'react-sparklines';
+import { Sparklines, SparklinesLine, SparklinesReferenceLine} from 'react-sparklines';
+import _ from 'lodash';
+
+function average(data){
+    return _.round( _.sum(data)/ data.length);
+}
 
 export default class Chart extends Component {
     constructor(props){
         super(props);
-        //this.state =  {term :''};
-        //this.onInputChange = this.onInputChange.bind(this); // needed so that this will be SearchBar Component in the call back
-        //this.onFormSubmit = this.onFormSubmit.bind(this); 
     }
 
   render() {
     return (
         <div>
             <Sparklines height={120} width={180} data={this.props.data}>
-                <SparklinesLine color={this.props.color}>
-                </SparklinesLine>
+                <SparklinesLine color={this.props.color} />
+                <SparklinesReferenceLine type="avg" />
             </Sparklines>
+            <div>
+                {average(this.props.data)} {this.props.units}
+            </div>
         </div>
     );
 
