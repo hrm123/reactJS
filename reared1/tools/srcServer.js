@@ -1,30 +1,30 @@
-import express from 'express';
-import webpack from 'webpack';
+'use strict';
 import path from 'path';
-import config from '../webpack.config.dev';
-import open from 'open';
 
-/* eslint-disable no-console */
+const Hapi = require('hapi');
 
-const port = 3000;
-const app = express();
-const compiler = webpack(config);
+const server = new Hapi.Server();
+server.connection({ port: 3003 });
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
+server.register(require('inert'), (err) => {
 
-app.use(require('webpack-hot-middleware')(compiler));
+    if (err) {
+        throw err;
+    }
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join( __dirname, '../src/index.html'));
+    server.route({
+        method: 'GET',
+        path: '/',
+        handler: function (request, reply) {
+            reply.file(path.join( __dirname, '../src/index.html'));
+        }
+    });
 });
 
-app.listen(port, function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    open(`http://localhost:${port}`);
-  }
+server.start((err) => {
+
+    if (err) {
+        throw err;
+    }
+    console.log(`Server running at: ${server.info.uri}`);
 });
