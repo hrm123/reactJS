@@ -1,5 +1,16 @@
+
+html,body  {
+        height:100%;
+        margin:0;
+        padding:0;
+    }
+div#root {
+    
+}
+
 .App {
   text-align: center;
+  height:100%;
 }
 
 .App-logo {
@@ -22,3 +33,151 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.header {
+        margin-top: 80
+    }
+.headerText {
+        text-align: 'center';
+        font-size: 72;
+        color: 'rgba(175,47,47,0.25)';
+        font-weight: '100';
+    }
+
+.buttonContainer {
+        align-items: 'flex-end';
+    }
+
+  .button {
+        height: 50;
+        padding-left: 20;
+        padding-right: 20;
+        background-color: '#ffffff';
+        width: 200;
+        margin-right: 20;
+        margin-top: 15;
+        border-width: 1;
+        border-color: 'rgba(0,0,0,.1)';
+        justify-content: 'center';
+        align-items: 'center';
+    }
+
+    .submit {
+        color: '#666666';
+        font-weight: '600';
+    }
+
+    .inputContainer {
+        margin-left: 20;
+        margin-right: 20;
+        shadow-opacity: 0.2;
+        shadow-radius: 3;
+        shadow-color: '#000000';
+    }
+
+    .input {
+        height: 60;
+        background-color: "#ffffff";
+        padding-left: 10;
+        padding-right: 10;
+    }
+
+    .tabbarcontainer {
+        height: 70;
+        display:flex;
+        flex:1;
+        flex-direction: 'row';
+        border-width:1;
+        border-color: '#dddddd';
+        justify-content: flex-end;
+    }
+
+    .tabbaritem {
+        flex: 1;
+        justify-content: 'center';
+        align-items: 'center';
+    }
+
+    .border {
+        border-width: 1;
+        border-color: '#dddddd';
+    }
+
+    .itemText {
+        color: '#777777';
+        font-size: 16;
+    }
+
+    .selected {
+        background-color: '#ffffff';
+    }
+
+    .bold {
+        font-weight: 'bold';
+    }
+
+    .todoContainer {
+        margin-left: 20;
+        margin-right: 20;
+        background-color: '#ffffff';
+        border-color: '#ededed';
+        padding-left: 14;
+        padding-top: 7;
+        padding-bottom: 7;
+        /*
+        shadow-opacity: 0.2;
+        shadow-radius: 3;
+        shadow-color: '#000000';
+        */
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: 'row';
+        align-items: 'center';
+    }
+
+    .todoText {
+        flex: 4;
+        justify-content: 'flex-start';
+        font-size: 17
+    }
+
+    .buttons {
+        flex: 1;
+        justify-content: 'flex-end';
+        align-items: 'center';
+    }
+
+
+    .todobutton {
+        align-self: 'flex-end';
+        padding: 7;
+        border-color: '#ededed';
+        border-width: 1;
+        border-radius: 4;
+        margin-right: 5;
+    }
+
+    .text {
+        color: '#666666'
+    }
+
+    .complete {
+        color: 'green';
+        font-weight: 'bold';
+    }
+    
+    .deleteButton {
+        color: 'rgba(175, 47, 47, 1)';
+    }
+
+    .rootcontainer {
+        display:flex;
+        flex-direction: column;
+        background-color: #f5f5f5;
+        height:400px;
+    }
+
+    .rootcontent {
+        flex: 1;
+        padding-top: 6;
+    }
