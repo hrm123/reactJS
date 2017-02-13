@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Button } from 'react-bootstrap';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.onClick  = this.onClick.bind(this);
+    this.state = { "Caption" : "Before Click" };
+  }
+
+  onClick(evnt){
+    this.setState({ "Caption" : "After Click" });
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,7 +22,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started,edit <code>src/App.js</code> and save to reload.
+            <Button bsStyle="primary" onClick={this.onClick}>{this.state.Caption}</Button>
         </p>
       </div>
     );
