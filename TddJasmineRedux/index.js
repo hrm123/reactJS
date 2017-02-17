@@ -8,14 +8,6 @@ import configureStore from './configureStore';
 // creates our Redux store (elsewhere)
 const store = configureStore();
 
-
-/*
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
-*/
-
 ReactDOM.render(
   <Provider store={store}>
     <App />
