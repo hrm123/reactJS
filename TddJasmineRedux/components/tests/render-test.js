@@ -1,5 +1,5 @@
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+import TestUtils,{createRenderer} from 'react-addons-test-utils';
 import Button from '../Button';
 import Heading from '../Heading';
 import Input from '../Input';
@@ -10,74 +10,81 @@ import TodoButton from '../TodoButton';
 import TodoList from '../TodoList';
 
 describe('<Button>', function () {
-  it('renders without problems', function () {
-    var rendered = TestUtils.renderIntoDocument(<Button/>);
-    expect(rendered).toBeDefined();
+  beforeEach(function() {
+    this.renderer =  createRenderer();
   });
-});
 
-describe('<Heading>', function () {
-  it('renders without problems', function () {
-    var rendered = TestUtils.renderIntoDocument(<Heading/>);
+  it('Button renders without problems', function () {
+    this.renderer.render(<Button/>);
+    let rendered = this.renderer.getRenderOutput();
     expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
   });
-});
 
-
-describe('<Input>', function () {
-  it('renders without problems', function () {
-    var rendered = TestUtils.renderIntoDocument(<Input/>);
+  it('Heading renders without problems', function () {
+    this.renderer.render(<Heading/>);
+    let rendered = this.renderer.getRenderOutput();
     expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
   });
-});
 
-
-describe('<TabBar>', function () {
-  it('renders without problems', function () {
-    var rendered = TestUtils.renderIntoDocument(<TabBar/>);
+  it('Input without problems', function () {
+    this.renderer.render(<Input/>);
+    let rendered = this.renderer.getRenderOutput();
     expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
   });
-});
 
-
-describe('<TabBarItem>', function () {
-  it('renders without problems', function () {
-    var rendered = TestUtils.renderIntoDocument(<TabBarItem/>);
+  it('TabBar renders without problems', function () {
+    this.renderer.render(<TabBar/>);
+    let rendered = this.renderer.getRenderOutput();
     expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
   });
-});
 
+  it('TabBarItem renders without problems', function () {
+    this.renderer.render(<TabBarItem/>);
+    let rendered = this.renderer.getRenderOutput();
+    expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
+  });
 
-describe('<Todo>', function () {
-  it('renders without problems', function () {
+  it('Todo renders without problems', function () {
     let todoData = { Task : "todo1", Complete: false, TaskId:"1"};
     var callback1 = () => {};
     var callback2 = () => {};
-    var rendered = TestUtils.renderIntoDocument(<Todo todo={todoData} toggleComplete={callback1} deleteTodo={callback2}/>);
+    this.renderer.render(<Todo todo={todoData} toggleComplete={callback1} deleteTodo={callback2}/>);
+    let rendered = this.renderer.getRenderOutput();
     expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
   });
-});
 
-
-describe('<TodoButton>', function () {
-  it('renders without problems', function () {
-    var rendered = TestUtils.renderIntoDocument(<TodoButton/>);
+  it('TodoButton renders without problems', function () {
+    this.renderer.render(<TodoButton/>);
+    let rendered = this.renderer.getRenderOutput();
     expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
   });
-});
 
-
-describe('<TodoList>', function () {
-  it('renders without problems', function () {
+  it('TodoList renders without problems', function () {
     let todosData = [{ Task : "todo1", Complete: false, TaskId:"1"},
                     { Task : "todo2", Complete: true, TaskId:"2"}];
     var callback1 = () => {};
     var callback2 = () => {};
-    var rendered = TestUtils.renderIntoDocument(<TodoList todos={todosData} toggleComplete={callback1} deleteTodo={callback2} type="All"/>);
+    this.renderer.render(<TodoList todos={todosData} toggleComplete={callback1} deleteTodo={callback2} type="All"/>);
+    let rendered = this.renderer.getRenderOutput();
     expect(rendered).toBeDefined();
+    expect(rendered).toBeTruthy();
+    expect(rendered).not.toEqual(null);
   });
 });
-
 
 /*
 it('should render a component with a function as a prop', function() {
