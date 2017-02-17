@@ -3,11 +3,12 @@ var webpackConfig = require('./webpack.config')
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'PhantomJS' ],
+    browsers: ['PhantomJS' ], //'Chrome',
     singleRun: true,
     frameworks: [ 'jasmine' ],
     files: [
-      'tests.webpack.js' //just load this file
+      'tests.webpack.js', //just load this file
+      'index.html'
     ],
     preprocessors: {
       'tests.webpack.js': [ 'webpack', 'sourcemap' ]

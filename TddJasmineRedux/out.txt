@@ -1,0 +1,62 @@
+
+> starter-kit@1.2.0 test Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux
+> karma start
+
+Hash: 79370c8e267f5eef84ac
+Version: webpack 2.2.1
+Time: 1907ms
+           Asset    Size  Chunks                    Chunk Names
+            main  859 kB       0  [emitted]  [big]  main
+tests.webpack.js  894 kB       1  [emitted]  [big]  tests.webpack.js
+chunk    {0} main (main) 817 kB [entry]
+    [7] ./~/react/react.js 56 bytes {0} {1} [built]
+   [33] ./~/redux/es/index.js 1.08 kB {0} {1} [built]
+   [85] ./~/react-redux/es/index.js 194 bytes {0} {1} [built]
+   [99] ./index.js 816 bytes {0} [built]
+  [101] ./app.js 2.59 kB {0} [built]
+  [106] ./components/TabBarItem.js 830 bytes {0} {1} [built]
+  [110] ./configureStore.js 1.08 kB {0} {1} [built]
+  [111] ./containers/root.js 6.78 kB {0} {1} [built]
+  [113] ./reducers/rootReducer.js 465 bytes {0} {1} [built]
+  [116] ./~/css-loader!./index.css 231 bytes {0} [built]
+  [131] ./~/react-dom/index.js 59 bytes {0} [built]
+  [203] ./~/react-redux/es/components/Provider.js 2.7 kB {0} {1} [built]
+  [204] ./~/react-redux/es/connect/connect.js 5.34 kB {0} {1} [built]
+  [248] ./index.css 895 bytes {0}
+  [250] multi ./index.js 28 bytes {0}
+     + 236 hidden modules
+chunk    {1} tests.webpack.js (tests.webpack.js) 850 kB [entry] [rendered]
+    [7] ./~/react/react.js 56 bytes {0} {1} [built]
+   [21] ./~/react/lib/React.js 2.69 kB {0} {1} [built]
+   [33] ./~/redux/es/index.js 1.08 kB {0} {1} [built]
+   [83] ./~/react-redux/es/components/connectAdvanced.js 12.2 kB {0} {1} [built]
+   [85] ./~/react-redux/es/index.js 194 bytes {0} {1} [built]
+  [110] ./configureStore.js 1.08 kB {0} {1} [built]
+  [203] ./~/react-redux/es/components/Provider.js 2.7 kB {0} {1} [built]
+  [204] ./~/react-redux/es/connect/connect.js 5.34 kB {0} {1} [built]
+  [233] ./~/redux-thunk/lib/index.js 529 bytes {0} {1} [built]
+  [251] ./~/react-addons-test-utils/index.js 57 bytes {1} [built]
+  [252] ./components -test\.js$ 242 bytes {1} [built]
+  [255] ./components/tests/hello-test.js 917 bytes {1} [optional] [built]
+  [256] ./components/tests/render-test.js 4.6 kB {1} [optional] [built]
+  [257] ./components/tests/todolist-test.js 4.14 kB {1} [optional] [built]
+  [261] ./tests.webpack.js 115 bytes {1} [built]
+     + 241 hidden modules
+
+WARNING in ./App.js
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\App.js
+    Used by 1 module(s), i. e.
+    Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\components\tests\todolist-test.js
+* Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\app.js
+    Used by 1 module(s), i. e.
+    Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\index.js
+[32m17 02 2017 12:54:30.079:INFO [karma]: [39mKarma v0.13.22 server started at http://localhost:9876/
+[32m17 02 2017 12:54:30.087:INFO [launcher]: [39mStarting browser PhantomJS
+[32m17 02 2017 12:54:32.120:INFO [PhantomJS 2.1.1 (Windows 7 0.0.0)]: [39mConnected on socket p5jdmtNRktzb9gvRAAAA with id 50733410
+.........
+LOG: Provider{props: Object{store: Object{dispatch: ..., subscribe: ..., getState: ..., replaceReducer: ..., @@observable: ...}, children: Object{$$typeof: ..., type: ..., key: ..., ref: ..., props: ..., _owner: ..., _store: ...}}, context: Object{}, refs: Object{}, updater: Object{isMounted: function (publicInstance) { ... }, enqueueCallback: function (publicInstance, callback, callerName) { ... }, enqueueCallbackInternal: function (internalInstance, callback) { ... }, enqueueForceUpdate: function (publicInstance) { ... }, enqueueReplaceState: function (publicInstance, completeState) { ... }, enqueueSetState: function (publicInstance, partialState) { ... }, enqueueElementInternal: function (internalInstance, nextElement, nextContext) { ... }, validateCallback: function (callback, callerName) { ... }}, store: Object{dispatch: function (action) { ... }, subscribe: function subscribe(listener) { ... }, getState: function getState() { ... }, replaceReducer: function replaceReducer(nextReducer) { ... }, @@observable: function observable() { ... }}, _reactInternalInstance: {_currentElement: Object{$$typeof: ..., type: ..., key: ..., ref: ..., props: ..., _owner: ..., _store: ...}, _rootNodeID: 0, _compositeType: 0, _instance: Provider{props: ..., context: ..., refs: ..., updater: ..., store: ..., _reactInternalInstance: ..., state: ...}, _hostParent: null, _hostContainerInfo: Object{_topLevelWrapper: ..., _idCounter: ..., _ownerDocument: ..., _node: ..., _tag: ..., _namespaceURI: ..., _ancestorInfo: ...}, _updateBatchNumber: null, _pendingElement: null, _pendingStateQueue: null, _pendingReplaceState: false, _pendingForceUpdate: false, _renderedNodeType: 1, _renderedComponent: {_currentElement: ..., _rootNodeID: ..., _compositeType: ..., _instance: ..., _hostParent: ..., _hostContainerInfo: ..., _updateBatchNumber: ..., _pendingElement: ..., _pendingStateQueue: ..., _pendingReplaceState: ..., _pendingForceUpdate: ..., _renderedNodeType: ..., _renderedComponent: ..., _context: ..., _mountOrder: ..., _topLevelWrapper: ..., _pendingCallbacks: ..., _calledComponentWillUnmount: ..., _warnedAboutRefsInRender: ..., _mountIndex: ..., _mountImage: ..., _debugID: ...}, _context: Object{}, _mountOrder: 12, _topLevelWrapper: {_currentElement: ..., _rootNodeID: ..., _compositeType: ..., _instance: ..., _hostParent: ..., _hostContainerInfo: ..., _updateBatchNumber: ..., _pendingElement: ..., _pendingStateQueue: ..., _pendingReplaceState: ..., _pendingForceUpdate: ..., _renderedNodeType: ..., _renderedComponent: ..., _context: ..., _mountOrder: ..., _topLevelWrapper: ..., _pendingCallbacks: ..., _calledComponentWillUnmount: ..., _warnedAboutRefsInRender: ..., _mountIndex: ..., _mountImage: ..., _debugID: ...}, _pendingCallbacks: null, _calledComponentWillUnmount: false, _warnedAboutRefsInRender: false, _mountIndex: 0, _mountImage: null, _debugID: 19}, state: null}
+..
+PhantomJS 2.1.1 (Windows 7 0.0.0): Executed 11 of 11 SUCCESS (0.003 secs / 0.046 secs)
