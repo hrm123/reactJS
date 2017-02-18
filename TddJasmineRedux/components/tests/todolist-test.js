@@ -11,6 +11,7 @@ import TodoList from '../TodoList';
 import { Provider, connect  } from 'react-redux'
 import configureStore from '../../configureStore'; 
 import App from '../../App';
+import { mount } from 'enzyme';
 
 describe("TodoList component - tests", () => {
   beforeEach(function() {
@@ -41,31 +42,70 @@ describe("TodoList component - tests", () => {
     */
   });
 
-    it("renders correct number and text for todo elements", function() {
+    it("test for stateful component - uses DOM nodes", function() {
         //console.log(ReactTestUtils);
         //console.log(global.document);
-        const store = configureStore();
-        this.component0 = ReactTestUtils.renderIntoDocument(
-        <Provider store={store}>
+        const store1 = configureStore();
+        const storeFake = (state) => ({
+          default: () => {},
+          subscribe: () => {},
+          dispatch: () => {},
+          getState: () => ({ ...state })
+        });
+
+        /*
+        let component0 = ReactTestUtils.renderIntoDocument(
+        <Provider store={storeFake}>
             <App />
         </Provider>);
-        this.component = ReactTestUtils.renderIntoDocument(<TodoList todos={this.todosData} toggleComplete={this.callback1} deleteTodo={this.callback2} type={this.taskType} />);
+        */
+
+        const wrapper = mount (<Provider store={store1}>
+            <App />
+        </Provider>);
+        //console.log(wrapper);
+        //console.log(wrapper.find(App).text());
+   
+
+        /*
+        //this.component = ReactTestUtils.renderIntoDocument(<TodoList todos={this.todosData} toggleComplete={this.callback1} deleteTodo={this.callback2} type={this.taskType} />);
+        let renderedDOM0 = () => React.findDOMNode(component0);
+        expect(renderedDOM0).toBeDefined();
+        expect(renderedDOM0).toBeTruthy();
+        expect(renderedDOM0).not.toEqual(null);
+        console.log(renderedDOM0());
+        //console.log(component0.store.getState());
+        let header1 = ReactTestUtils.findRenderedDOMComponentWithTag(
+          component0, 'Root'
+        );
+        expect(header1).toBeDefined();
+        expect(header1).toBeTruthy();
+        expect(header1).not.toEqual(null);
         //console.log( window);
         //console.log(window.document);
-        console.log(this.component0);
+        //console.log(this.component0);
         //console.log(this.component1);
         //this.renderedDOM = () => React.findDOMNode(this.component);
+        */
     });
 
-  it("renders correct html container", function() {
+  it("tests for stateless component - without DOM", function() {
     this.renderer.render(<TodoList todos={this.todosData} toggleComplete={this.callback1} deleteTodo={this.callback2} type={this.taskType}/>);
     let renderedOutput = this.renderer.getRenderOutput();
+    //console.log('stateless comp');
     //console.log(renderedOutput);
+   // console.log(renderedOutput.props.children[0]);
+    //console.log(renderedOutput.props.children[1]);
     //console.log(renderedOutput.props.children);
     //let renderedTodos = this.renderedOutput.querySelectorAll("div.todotext");
     //expect(this.renderedDOM().children.length).toEqual(1);
     expect(renderedOutput.type).toBe('div');
-    //expect(renderedTodos.length).toEqual(2);
+    expect(renderedOutput.props.children.length).toEqual(2);
+
+    const todolistDom = mount(<TodoList todos={this.todosData} toggleComplete={this.callback1} deleteTodo={this.callback2} type={this.taskType}/>);
+    console.log(todolistDom.find(TodoList));
+    expect(todolistDom.find('div.todotext').length).toequal(2);
+
     //expect(renderedTodos[0].textContent).toEqual("todo1");
     //expect(renderedTodos[1].textContent).toEqual("todo2");
   });
