@@ -1,0 +1,65 @@
+
+> starter-kit@1.2.0 test Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux
+> karma start
+
+Hash: 383485c61724cd5595b8
+Version: webpack 2.2.1
+Time: 3421ms
+           Asset     Size  Chunks                    Chunk Names
+            main   860 kB       0  [emitted]  [big]  main
+tests.webpack.js  1.24 MB       1  [emitted]  [big]  tests.webpack.js
+chunk    {0} main (main) 818 kB [entry]
+    [7] ./~/react/react.js 56 bytes {0} {1} [built]
+   [33] ./~/redux/es/index.js 1.08 kB {0} {1} [built]
+   [85] ./~/react-redux/es/index.js 194 bytes {0} {1} [built]
+   [99] ./index.js 816 bytes {0} [built]
+  [101] ./app.js 2.59 kB {0} [built]
+  [106] ./components/TabBarItem.js 830 bytes {0} {1} [built]
+  [110] ./configureStore.js 1.08 kB {0} {1} [built]
+  [111] ./containers/root.js 6.78 kB {0} {1} [built]
+  [113] ./reducers/rootReducer.js 465 bytes {0} {1} [built]
+  [116] ./~/css-loader!./index.css 231 bytes {0} [built]
+  [131] ./~/react-dom/index.js 59 bytes {0} {1} [built]
+  [203] ./~/react-redux/es/components/Provider.js 2.7 kB {0} {1} [built]
+  [204] ./~/react-redux/es/connect/connect.js 5.34 kB {0} {1} [built]
+  [248] ./index.css 895 bytes {0}
+  [250] multi ./index.js 28 bytes {0}
+     + 236 hidden modules
+chunk    {1} tests.webpack.js (tests.webpack.js) 1.18 MB [entry] [rendered]
+    [7] ./~/react/react.js 56 bytes {0} {1} [built]
+   [13] ./App.css 889 bytes {0} {1}
+   [33] ./~/redux/es/index.js 1.08 kB {0} {1} [built]
+   [85] ./~/react-redux/es/index.js 194 bytes {0} {1} [built]
+  [110] ./configureStore.js 1.08 kB {0} {1} [built]
+  [131] ./~/react-dom/index.js 59 bytes {0} {1} [built]
+  [204] ./~/react-redux/es/connect/connect.js 5.34 kB {0} {1} [built]
+  [233] ./~/redux-thunk/lib/index.js 529 bytes {0} {1} [built]
+  [267] ./~/react-addons-test-utils/index.js 57 bytes {1} [built]
+  [341] ./components -test\.js$ 242 bytes {1} [built]
+  [342] ./App.js 2.59 kB {1} [built]
+  [344] ./components/tests/hello-test.js 917 bytes {1} [optional] [built]
+  [345] ./components/tests/render-test.js 4.6 kB {1} [optional] [built]
+  [346] ./components/tests/todolist-test.js 6.68 kB {1} [optional] [built]
+  [489] ./tests.webpack.js 115 bytes {1} [built]
+     + 470 hidden modules
+
+WARNING in ./App.js
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\App.js
+    Used by 1 module(s), i. e.
+    Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\components\tests\todolist-test.js
+* Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\app.js
+    Used by 1 module(s), i. e.
+    Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\node_modules\babel-loader\lib\index.js??ref--0!Q:\ram_tech\MY_GIT\reactJS\TddJasmineRedux\index.js
+[32m18 02 2017 09:46:23.090:INFO [karma]: [39mKarma v0.13.22 server started at http://localhost:9876/
+[32m18 02 2017 09:46:23.106:INFO [launcher]: [39mStarting browser PhantomJS
+[32m18 02 2017 09:46:26.402:INFO [PhantomJS 2.1.1 (Windows 7 0.0.0)]: [39mConnected on socket J0yI-tra-OxfgMdsAAAA with id 19581227
+.
+LOG: ReactWrapper{component: {setChildProps: function setChildProps() { ... }, setChildContext: function setChildContext() { ... }, getInstance: function getInstance() { ... }, getWrappedComponent: function getWrappedComponent() { ... }, props: Object{Component: ..., props: ..., context: ...}, context: Object{}, refs: Object{}, updater: Object{isMounted: ..., enqueueCallback: ..., enqueueCallbackInternal: ..., enqueueForceUpdate: ..., enqueueReplaceState: ..., enqueueSetState: ..., enqueueElementInternal: ..., validateCallback: ...}, state: Object{mount: ..., props: ..., context: ...}, _reactInternalInstance: {_currentElement: ..., _rootNodeID: ..., _compositeType: ..., _instance: ..., _hostParent: ..., _hostContainerInfo: ..., _updateBatchNumber: ..., _pendingElement: ..., _pendingStateQueue: ..., _pendingReplaceState: ..., _pendingForceUpdate: ..., _renderedNodeType: ..., _renderedComponent: ..., _context: ..., _mountOrder: ..., _topLevelWrapper: ..., _pendingCallbacks: ..., _calledComponentWillUnmount: ..., _warnedAboutRefsInRender: ..., _mountIndex: ..., _mountImage: ..., _debugID: ...}}, root: ReactWrapper{component: {setChildProps: ..., setChildContext: ..., getInstance: ..., getWrappedComponent: ..., props: ..., context: ..., refs: ..., updater: ..., state: ..., _reactInternalInstance: ...}, root: ReactWrapper{component: ..., root: ..., node: ..., nodes: ..., length: ..., options: ..., complexSelector: ...}, node: Provider{props: ..., context: ..., refs: ..., updater: ..., store: ..., _reactInternalInstance: ..., state: ...}, nodes: [...], length: 1, options: Object{}, complexSelector: ComplexSelector{buildPredicate: ..., findWhereUnwrapped: ..., childrenOfNode: ...}}, node: Provider{props: Object{store: ..., children: ...}, context: Object{}, refs: Object{}, updater: Object{isMounted: ..., enqueueCallback: ..., enqueueCallbackInternal: ..., enqueueForceUpdate: ..., enqueueReplaceState: ..., enqueueSetState: ..., enqueueElementInternal: ..., validateCallback: ...}, store: Object{dispatch: ..., subscribe: ..., getState: ..., replaceReducer: ..., @@observable: ...}, _reactInternalInstance: {_currentElement: ..., _rootNodeID: ..., _compositeType: ..., _instance: ..., _hostParent: ..., _hostContainerInfo: ..., _updateBatchNumber: ..., _pendingElement: ..., _pendingStateQueue: ..., _pendingReplaceState: ..., _pendingForceUpdate: ..., _renderedNodeType: ..., _renderedComponent: ..., _context: ..., _mountOrder: ..., _topLevelWrapper: ..., _pendingCallbacks: ..., _calledComponentWillUnmount: ..., _warnedAboutRefsInRender: ..., _mountIndex: ..., _mountImage: ..., _debugID: ...}, state: null}, nodes: [Provider{props: ..., context: ..., refs: ..., updater: ..., store: ..., _reactInternalInstance: ..., state: ...}], length: 1, options: Object{}, complexSelector: ComplexSelector{buildPredicate: function buildInstPredicate(selector) { ... }, findWhereUnwrapped: function findWhereUnwrapped(wrapper, predicate) { ... }, childrenOfNode: function childrenOfInst(node) { ... }}}
+LOG: null
+PhantomJS 2.1.1 (Windows 7 0.0.0) TodoList component - tests test for stateful component - uses DOM nodes FAILED
+	TypeError: null is not an object (evaluating 'wrapper.state().maxTodoIndex') in Q:/ram_tech/MY_GIT/reactJS/TddJasmineRedux/tests.webpack.js (line 32963)
+	Q:/ram_tech/MY_GIT/reactJS/TddJasmineRedux/tests.webpack.js:32963:31
+PhantomJS 2.1.1 (Windows 7 0.0.0): Executed 2 of 12 (1 FAILED) (skipped 10) (0 secs / 0.054 secs)

@@ -9,7 +9,7 @@ import Todo from '../Todo';
 import TodoButton from '../TodoButton';
 import TodoList from '../TodoList';
 
-describe('<Button>', function () {
+xdescribe('<Button>', function () {
   beforeEach(function() {
     this.renderer =  createRenderer();
   });
