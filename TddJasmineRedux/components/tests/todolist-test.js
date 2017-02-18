@@ -53,14 +53,34 @@ describe("TodoList component - tests", () => {
     it("test for stateful component - uses DOM nodes", function() {
         //console.log(ReactTestUtils);
         //console.log(global.document);
-        const store1 = configureStore();
+        const testData = {
+          inputValue: "My first todo",
+          todos: [{
+                  "Task": "todo1",
+                  "Complete": false,
+                  "taskType": "General",
+                  "TaskId": 1 // will be updated in tthe action method
+              },
+              {
+                  "Task": "todo2",
+                  "Complete": false,
+                  "taskType": "General",
+                  "TaskId": 2 // will be updated in tthe action method
+              }],
+          taskType: 'General',
+          taskStatus:'All',
+          maxTodoIndex: 2
+        };
+        const store1 = configureStore({"persistedState" : {"todos" :testData}});
         const storeFake = (state) => ({
           default: () => {},
           subscribe: () => {},
           dispatch: () => {},
-          getState: () => ({ ...state })
+          getState: () => ({ ...state }),
+          
         });
-
+        
+        //let state2 = Object.assign({}, store1, testData);
         /*
         let component0 = ReactTestUtils.renderIntoDocument(
         <Provider store={storeFake}>
