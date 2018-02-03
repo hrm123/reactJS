@@ -8,6 +8,7 @@ import Step3 from './steps/step3';
 import Step4 from './steps/step4';
 import Step5 from './steps/step5';
 require('./css/main.css');
+const uuidv4 = require('uuid/v4');
 
 class App extends Component {
 
@@ -21,13 +22,15 @@ class App extends Component {
             question: 'q1',
             answers: ['a1', 'a2', 'a3', 'a4'],
             scores: [1,0,0,0],
-            userAnswer: ''
+            userAnswer: '',
+            id: uuidv4()
           },
           {
             question: 'q2',
             answers: ['a5', 'a6', 'a7', 'a8'],
             scores: [0,0,1,0],
-            userAnswer: ''
+            userAnswer: '',
+            id: uuidv4()
           }
         ],
       "2" : [
@@ -35,13 +38,15 @@ class App extends Component {
           question: 'q3',
           answers: ['a9', 'a10', 'a11', 'a12'],
           scores: [1,0,0,0],
-          userAnswer: ''
+          userAnswer: '',
+          id: uuidv4()
         },
         {
           question: 'q4',
           answers: ['a13', 'a14', 'a15', 'a16'],
           scores: [0,0,1,0],
-          userAnswer: ''
+          userAnswer: '',
+          id: uuidv4()
         }
       ],
       "3" : [
@@ -49,13 +54,15 @@ class App extends Component {
           question: 'q1',
           answers: ['a1', 'a2', 'a3', 'a4'],
           scores: [1,0,0,0],
-          userAnswer: ''
+          userAnswer: '',
+          id: uuidv4()
         },
         {
           question: 'q2',
           answers: ['a5', 'a6', 'a7', 'a8'],
           scores: [0,0,1,0],
-          userAnswer: ''
+          userAnswer: '',
+          id: uuidv4()
         }
       ],
     "4" : [
@@ -63,13 +70,15 @@ class App extends Component {
         question: 'q3',
         answers: ['a9', 'a10', 'a11', 'a12'],
         scores: [1,0,0,0],
-        userAnswer: ''
+        userAnswer: '',
+        id: uuidv4()
       },
       {
         question: 'q4',
         answers: ['a13', 'a14', 'a15', 'a16'],
         scores: [0,0,1,0],
-        userAnswer: ''
+        userAnswer: '',
+        id: uuidv4()
       }
     ]      
     };

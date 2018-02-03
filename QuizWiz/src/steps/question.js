@@ -16,7 +16,7 @@ export default class Question extends Component {
     render() {
         var q = this.props.question;
         console.log(q);
-        const ans = q.answers.map( (a,i) => <Answer data={a} key={i} /> );
+        const ans = q.answers.map( (a,i) => <Answer data={a} key={i} groupName={q.id}/> );
         debugger;
         return (
             <div className="container">
