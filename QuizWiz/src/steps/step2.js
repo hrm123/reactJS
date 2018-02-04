@@ -34,7 +34,7 @@ class Step2 extends Component {
         <div className="App">
             <div className="step step1 container">
                 <form id="Form" className="form-horizontal">
-                    <QuestionList questions={stepData}/>
+                    <QuestionList questions={stepData} sid={this.props.stepId} onUpdate={this.props.updateStore}/>
                 </form>
             </div>
         </div>

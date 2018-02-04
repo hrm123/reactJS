@@ -14,7 +14,7 @@ export default class QuestionList extends Component {
     componentWillUnmount() {}
     render(){
         console.log(this.props.questions);
-        var qs = this.props.questions.map((q,i) => <Question key={i} question={q} />)
+        var qs = this.props.questions.map((q,i) => <Question key={i} id={i} sid={this.props.sid} question={q} onUpdate={this.props.onUpdate}/>)
         return (
             <p>
             <div className="container">

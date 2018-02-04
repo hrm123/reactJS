@@ -16,8 +16,9 @@ class App extends Component {
     super(props);
     this.state = {};
 
-    const data = {
-      "1" : [
+    const data =
+      [
+        [
           {
             question: 'q1',
             answers: ['a1', 'a2', 'a3', 'a4'],
@@ -33,7 +34,7 @@ class App extends Component {
             id: uuidv4()
           }
         ],
-      "2" : [
+        [
         {
           question: 'q3',
           answers: ['a9', 'a10', 'a11', 'a12'],
@@ -49,7 +50,7 @@ class App extends Component {
           id: uuidv4()
         }
       ],
-      "3" : [
+      [
         {
           question: 'q1',
           answers: ['a1', 'a2', 'a3', 'a4'],
@@ -65,7 +66,7 @@ class App extends Component {
           id: uuidv4()
         }
       ],
-    "4" : [
+      [
       {
         question: 'q3',
         answers: ['a9', 'a10', 'a11', 'a12'],
@@ -80,8 +81,8 @@ class App extends Component {
         userAnswer: '',
         id: uuidv4()
       }
-    ]      
-    };
+    ] 
+  ];
 
     this.sampleStore = {
       email: '',
@@ -94,6 +95,8 @@ class App extends Component {
   }
 
   updateStore(update) {
+    debugger;
+    this.sampleStore.stepsData[update.stepId][update.questionId].userAnswer = update.answerVal;
     this.sampleStore = {
       ...this.sampleStore,
       ...update,
