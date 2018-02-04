@@ -7,6 +7,8 @@ import Step2 from './steps/step2';
 import Step3 from './steps/step3';
 import Step4 from './steps/step4';
 import Step5 from './steps/step5';
+import Step6 from './steps/step6';
+
 require('./css/main.css');
 const uuidv4 = require('uuid/v4');
 
@@ -18,6 +20,7 @@ class App extends Component {
 
     const data =
       [
+        [],
         [
           {
             question: 'q1',
@@ -52,14 +55,14 @@ class App extends Component {
       ],
       [
         {
-          question: 'q1',
+          question: 'q5',
           answers: ['a1', 'a2', 'a3', 'a4'],
           scores: [1,0,0,0],
           userAnswer: '',
           id: uuidv4()
         },
         {
-          question: 'q2',
+          question: 'q6',
           answers: ['a5', 'a6', 'a7', 'a8'],
           scores: [0,0,1,0],
           userAnswer: '',
@@ -68,20 +71,21 @@ class App extends Component {
       ],
       [
       {
-        question: 'q3',
+        question: 'q7',
         answers: ['a9', 'a10', 'a11', 'a12'],
         scores: [1,0,0,0],
         userAnswer: '',
         id: uuidv4()
       },
       {
-        question: 'q4',
+        question: 'q8',
         answers: ['a13', 'a14', 'a15', 'a16'],
         scores: [0,0,1,0],
         userAnswer: '',
         id: uuidv4()
       }
-    ] 
+    ],
+    []
   ];
 
     this.sampleStore = {
@@ -94,24 +98,31 @@ class App extends Component {
     return this.sampleStore;
   }
 
-  updateStore(update) {
+  updateStore = (update) => {
     debugger;
-    this.sampleStore.stepsData[update.stepId][update.questionId].userAnswer = update.answerVal;
-    this.sampleStore = {
-      ...this.sampleStore,
-      ...update,
+    if(update.email) {
+      this.sampleStore.email = update.email;
     }
+    else {
+      this.sampleStore.stepsData[update.stepId][update.questionId].userAnswer = update.answerId;
+    }
+  }
+
+  updateEmail = (newEmail) => {
+    debugger;
+    this.sampleStore.email = newEmail;
   }
 
   render() {
 
     const steps =
     [
-      {name: 'Step 1', component: <Step1 dontValidate={true} stepId="1" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
-      {name: 'Step 2', component: <Step2 dontValidate={true} stepId="2" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
-      {name: 'Step 3', component: <Step3 dontValidate={true} stepId="3" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
-      {name: 'Step 4', component: <Step4 dontValidate={true} stepId="4" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
-      {name: 'Step 5', component: <Step5 dontValidate={true} stepId="5" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />}
+      {name: 'Step 1', component: <Step1 stepId="0" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} onUpdateEmail={this.updateEmail} />},
+      {name: 'Step 2', component: <Step2 stepId="1" getStore={() => (this.getStore())} updateStore={this.updateStore} />},
+      {name: 'Step 3', component: <Step3 stepId="2" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
+      {name: 'Step 4', component: <Step4 stepId="3" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
+      {name: 'Step 5', component: <Step5 stepId="4" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
+      {name: 'Step 5', component: <Step6 stepId="5" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />}
     ];
 
     return (
@@ -125,8 +136,8 @@ class App extends Component {
         <div className='step-progress'>
           <StepZilla steps={steps}
           preventEnterSubmission={true}
-          nextTextOnFinalActionStep={"Save"}
-
+          nextTextOnFinalActionStep={"Exit"}
+          prevBtnOnLastStep={false}
           />
         </div>
       </div>

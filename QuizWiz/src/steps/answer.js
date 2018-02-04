@@ -13,7 +13,6 @@ export default class Answer extends Component {
     componentWillUnmount() {}
 
     answerChanged = (changeEvent) => {
-        debugger;
         const dataChange = {
             answerId : this.props.id,
             questionId : this.props.qid,

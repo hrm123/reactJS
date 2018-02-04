@@ -1,49 +1,21 @@
 import React, { Component } from 'react';
 import Promise from 'promise';
+import QuestionList from './questionList';
 
-class Step2 extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {};
-      }
+const Step4 = (props) => {
+  debugger;
+  const data = props.getStore();
+  const stepData = data.stepsData[props.stepId];
+  return (
+      <div className="App">
+          <div className="step step1 container">
+              <form id="Form" className="form-horizontal">
+                  <QuestionList questions={stepData} sid={props.stepId} onUpdate={props.updateStore}/>
+              </form>
+          </div>
+      </div>
+  );
 
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-    
-    
-    isValidated = () => { 
-        return new Promise((resolve, reject) => {
-            resolve();
-            /*
-                this.props.validate((error) => {
-                resolve();
-            }) 
-            */
-        });
-    }
-
-    render() {
+}
   
-      return (
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Step4</h1>
-          </header>
-          <p className="App-intro">
-            
-          </p>
-          <div className="step step1">
-          <form id="Form" className="form-horizontal">
-            <div className="row">
-                step4 content
-            </div>
-            </form>
-        </div>
-        </div>
-      );
-    }
-  }
-  
-  export default Step2;
+  export default Step4;

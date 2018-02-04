@@ -1,35 +1,14 @@
 import React, { Component } from 'react';
 import Promise from 'promise';
 
-class Step2 extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {};
-      }
 
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-    
-    
-    isValidated = () => { 
-        return new Promise((resolve, reject) => {
-            resolve();
-            /*
-                this.props.validate((error) => {
-                resolve();
-            }) 
-            */
-        });
-    }
-
-    render() {
-  
-      return (
-        <div className="App">
+const Step5 = (props) => {
+  const data = props.getStore();
+  const stepData = data.stepsData[props.stepId];
+  return (
+    <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Step5</h1>
+            <h1 className="App-title">Review you answers</h1>
           </header>
           <p className="App-intro">
             
@@ -41,9 +20,8 @@ class Step2 extends Component {
             </div>
             </form>
         </div>
-        </div>
-      );
-    }
-  }
+      </div>
+  );
+}
   
-  export default Step2;
+export default Step5;
