@@ -4,9 +4,10 @@ import Promise from 'promise';
 export default class Answer extends Component {
     constructor(props) {
         super(props);
-    
-        this.state = {};
-      }
+        this.state ={
+            sel : this.props.id === this.props.ua
+        }
+    }
 
     componentDidMount() {}
 
@@ -19,18 +20,23 @@ export default class Answer extends Component {
             stepId : this.props.sid,
             sel : changeEvent.target.value
         };
+        debugger;
+        this.setState({sel: (changeEvent.target.value === "on") ? true: false});
         this.props.onUpdate(dataChange);
     }
 
     render() {
-        var ans = this.props.data;
-
+        const ans = this.props.data;
         return (
             <div className="row">
                 <div className="col-sm-12" style={{textAlign:"left"}}>
-                    <input type="radio" aid={this.props.id} name={this.props.groupName} onChange={this.answerChanged.bind(this)}/>&nbsp;&nbsp;{ans}
-                </div>
-               
+                <label>
+                            <input type="radio"
+                                name={this.props.groupName} 
+                                onChange={this.answerChanged.bind(this)}
+                                checked={this.state.sel}
+                            />&nbsp;&nbsp;{ans}</label>
+                        </div> 
             </div>
 
         );

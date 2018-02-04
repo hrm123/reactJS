@@ -15,8 +15,7 @@ export default class Question extends Component {
 
     render() {
         var q = this.props.question;
-        console.log(q);
-        const ans = q.answers.map( (a,i) => <Answer data={a} id={i} qid={this.props.id} sid={this.props.sid} key={i} groupName={q.id} onUpdate={this.props.onUpdate}/> );
+        const ans = q.answers.map( (a,i) => <Answer data={a} id={i} qid={this.props.id} sid={this.props.sid} key={i} groupName={q.id} onUpdate={this.props.onUpdate} ua={this.props.userAnswer}/> );
         return (
             <div className="container">
                 <div className="row" style={{textAlign:"left"}}>

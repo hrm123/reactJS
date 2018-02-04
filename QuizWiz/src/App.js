@@ -56,35 +56,20 @@ class App extends Component {
       [
         {
           question: 'q5',
-          answers: ['a1', 'a2', 'a3', 'a4'],
+          answers: ['a17', 'a18', 'a19', 'a20'],
           scores: [1,0,0,0],
           userAnswer: '',
           id: uuidv4()
         },
         {
           question: 'q6',
-          answers: ['a5', 'a6', 'a7', 'a8'],
+          answers: ['a21', 'a22', 'a23', 'a24'],
           scores: [0,0,1,0],
           userAnswer: '',
           id: uuidv4()
         }
       ],
-      [
-      {
-        question: 'q7',
-        answers: ['a9', 'a10', 'a11', 'a12'],
-        scores: [1,0,0,0],
-        userAnswer: '',
-        id: uuidv4()
-      },
-      {
-        question: 'q8',
-        answers: ['a13', 'a14', 'a15', 'a16'],
-        scores: [0,0,1,0],
-        userAnswer: '',
-        id: uuidv4()
-      }
-    ],
+      [],
     []
   ];
 
@@ -118,11 +103,11 @@ class App extends Component {
     const steps =
     [
       {name: 'Step 1', component: <Step1 stepId="0" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} onUpdateEmail={this.updateEmail} />},
-      {name: 'Step 2', component: <Step2 stepId="1" getStore={() => (this.getStore())} updateStore={this.updateStore} />},
+      {name: 'Step 2', component: <Step2 stepId="1" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
       {name: 'Step 3', component: <Step3 stepId="2" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
       {name: 'Step 4', component: <Step4 stepId="3" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
       {name: 'Step 5', component: <Step5 stepId="4" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
-      {name: 'Step 5', component: <Step6 stepId="5" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />}
+      {name: 'Step 6', component: <Step6 stepId="5" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />}
     ];
 
     return (
@@ -136,7 +121,8 @@ class App extends Component {
         <div className='step-progress'>
           <StepZilla steps={steps}
           preventEnterSubmission={true}
-          nextTextOnFinalActionStep={"Exit"}
+          nextTextOnFinalActionStep={"Submit"}
+          startAtStep={0}
           prevBtnOnLastStep={false}
           />
         </div>
