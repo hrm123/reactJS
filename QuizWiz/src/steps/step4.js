@@ -3,7 +3,6 @@ import Promise from 'promise';
 import QuestionList from './questionList';
 
 const Step4 = (props) => {
-  debugger;
   const data = props.getStore();
   const stepData = data.stepsData[props.stepId];
   return (

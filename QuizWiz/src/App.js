@@ -84,7 +84,6 @@ class App extends Component {
   }
 
   updateStore = (update) => {
-    debugger;
     if(update.email) {
       this.sampleStore.email = update.email;
     }
@@ -93,16 +92,11 @@ class App extends Component {
     }
   }
 
-  updateEmail = (newEmail) => {
-    debugger;
-    this.sampleStore.email = newEmail;
-  }
-
   render() {
 
     const steps =
     [
-      {name: 'Step 1', component: <Step1 stepId="0" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} onUpdateEmail={this.updateEmail} />},
+      {name: 'Step 1', component: <Step1 stepId="0" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
       {name: 'Step 2', component: <Step2 stepId="1" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
       {name: 'Step 3', component: <Step3 stepId="2" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},
       {name: 'Step 4', component: <Step4 stepId="3" getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}} />},

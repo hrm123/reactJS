@@ -20,7 +20,6 @@ export default class Answer extends Component {
             stepId : this.props.sid,
             sel : changeEvent.target.value
         };
-        debugger;
         this.setState({sel: (changeEvent.target.value === "on") ? true: false});
         this.props.onUpdate(dataChange);
     }
