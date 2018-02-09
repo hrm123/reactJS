@@ -1,0 +1,6 @@
+{
+  "extends": ["airbnb",
+    "plugin:redux-saga/recommended"
+  ],
+  "plugins": ["redux-saga"]
+}

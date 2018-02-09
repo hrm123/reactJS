@@ -2434,7 +2434,8 @@ If you have ideas for more “How To” recipes that should be on this page, [le
 
 
 [App details]
-1. API server : run 'npm install -g json-server command' and then 'json-server --watch db.json --port 3004' command in a separate terminal window.
+1. API server : run 'npm install -g json-server command' 
+and then 'json-server --watch db.json --port 3004' command in a separate terminal window.
  sample queries (online data using this server):
  http://jsonplaceholder.typicode.com/users
  http://jsonplaceholder.typicode.com/users/1
