@@ -8,6 +8,11 @@ import actions from '../store/actions';
 import App from '../components/app';
 
 class Root extends Component {
+  componentDidMount() {
+    console.log('componentDidMount');
+    this.props.fetchAppData('');
+  }
+
   answerChanged = (qid, answer) => {
     this.props.onAnswerChange(qid, answer);
   };
@@ -27,6 +32,7 @@ class Root extends Component {
 Root.propTypes = {
   onAnswerChange: PropTypes.func.isRequired,
   onEmailChanged: PropTypes.func.isRequired,
+  fetchAppData: PropTypes.func.isRequired,
 };
 
 
@@ -37,12 +43,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onAnswerChange: (qid, answer) => {
-    debugger;
     dispatch(actions.answerChanged(qid, answer));
   },
   onEmailChanged: (newVal) => {
-    debugger;
     dispatch(actions.emailChanged(newVal));
+  },
+  fetchAppData: (qry) => {
+    dispatch(actions.loadDataStarted(qry));
   },
 });
 

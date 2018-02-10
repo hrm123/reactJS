@@ -7,7 +7,9 @@ const actionTypes = require('./actionTypes');
 // action creators
 const loadDataStarted = filter => ({ type: actionTypes.LOAD_QUESTIONS, payload: filter });
 
-const loadDataSuccess = questions => ({ type: actionTypes.LOAD_QUESTIONS_SUCCESS, payload: questions });
+const loadDataSuccess = questions => ({
+  type: actionTypes.LOAD_QUESTIONS_SUCCESS, payload: questions,
+});
 
 const loadDataError = err => ({ type: actionTypes.LOAD_QUESTIONS_ERROR, payload: err });
 

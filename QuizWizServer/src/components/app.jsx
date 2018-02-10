@@ -15,11 +15,19 @@ class App extends Component {
   }
 
   answerChanged = () => {
-    this.props.onAnswerChanged(this.state.answer);
+    this.props.onAnswerChanged(this.state.qid, this.state.answer);
   }
 
   emailChanged = () => {
-    this.props.onEmailChanged(this.state.qid, this.state.answer);
+    this.props.onEmailChanged(this.state.email);
+  }
+
+  handleAnswerChanged = (e) => {
+    this.setState({ answer: e.target.value });
+  }
+
+  handleEmailChange = (e) => {
+    this.setState({ email: e.target.value });
   }
 
   render() {
@@ -29,11 +37,13 @@ class App extends Component {
           type="text"
           placeholder="john.smith@example.com"
           value={this.state.email}
+          onChange={this.handleEmailChange}
           onBlur={this.emailChanged}
         />
         <input
           type="text"
           value={this.state.answer}
+          onChange={this.handleAnswerChanged}
           onBlur={this.answerChanged}
         />
       </div>

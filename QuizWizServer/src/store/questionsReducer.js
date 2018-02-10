@@ -1,26 +1,34 @@
 /**
  * Created by Ramm on 2/9/2018.
  */
-import initialState from './initialState';
+/* eslint-disable */
+
+import initState from './initialState';
 const actionTypes = require('./actionTypes');
 
-const questionsReducer = (state = initialState.questions, action) => {
+const questionsReducer = (currentState = initState.questions, action) => {
   switch (action.type) {
     case actionTypes.LOAD_QUESTIONS:
-      return {
+      return Object.assign({}, currentState, {
         loading: true,
-      };
+      });
     case actionTypes.LOAD_QUESTIONS_SUCCESS:
-      return {
+      return Object.assign({}, currentState, {
         loading: false,
-        ...action.payload,
-      };
+      },{questions : action.payload });
     case actionTypes.LOAD_QUESTIONS_ERROR:
-      return {
+      return Object.assign({}, currentState, {
         loading: false,
-      };
+      });
+    case actionTypes.ANSWER_CHANGED:
+      var editedIndex = currentState.questions.map(x => x.id).indexOf(action.payload.q);
+      var targetQuestion = currentState.questions.filter(x => x.id === action.payload.q);
+      var editedQuestion = Object.assign({}, targetQuestion[0], {userAnswer: action.payload.a });
+      var clonedArray = JSON.parse(JSON.stringify(currentState.questions));
+      clonedArray.splice(editedIndex, 1, editedQuestion );
+      return Object.assign({}, currentState, clonedArray);
     default:
-      return state;
+      return currentState;
   }
 };
 
