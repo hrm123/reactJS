@@ -2,5 +2,6 @@
   "extends": ["airbnb",
     "plugin:redux-saga/recommended"
   ],
-  "plugins": ["redux-saga"]
+  "plugins": ["redux-saga"],
+  "parser": "babel-eslint"
 }

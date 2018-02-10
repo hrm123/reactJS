@@ -1,13 +1,10 @@
 /**
  * Created by Ramm on 2/9/2018.
  */
-import ReduxSaga from 'redux-saga';
 import { axios } from 'axios';
+import { put, call, takeEvery } from 'redux-saga/effects';
 import actionTypes from './actionTypes';
 import actions from './actions';
-
-const { put, call } = ReduxSaga.effects;
-const { takeEvery } = ReduxSaga;
 
 const getAppDataAPI = (query) => {
   const baseUrl = 'http://localhost:3004/questions';
@@ -40,6 +37,7 @@ export function* getAppdataSaga(query) {
 export function* getAnswerChangedSaga(data) {
   while (true) {
     try {
+      debugger;
       yield put(actions.answerChanged(data.qid, data.ans));
     } catch (err) {
       yield put(actions.loadDataError(err));

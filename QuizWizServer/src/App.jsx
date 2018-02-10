@@ -3,23 +3,14 @@ import { Provider, connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import store from './store/reduxstore';
+import Root from './containers/root';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
+  <div>
+    <Provider store={store}>
+      <Root />
+    </Provider>
   </div>
 );
 
-const AppContainer = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
-
-export default AppContainer;
+export default App;
