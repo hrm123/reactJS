@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Provider, connect } from 'react-redux';
-import logo from './logo.svg';
+import React from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 import store from './store/reduxstore';
-import Root from './containers/root';
+// import Root from './containers/root';
+import AppRoutes from './AppRoutes';
 
 const App = () => (
   <div>
     <Provider store={store}>
-      <Root />
+      <AppRoutes />
     </Provider>
   </div>
 );
