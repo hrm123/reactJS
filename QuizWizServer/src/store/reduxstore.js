@@ -1,10 +1,19 @@
 /**
  * Created by Ramm on 2/9/2018.
  */
-import React, { Component, PropTypes  } from 'react';
-import {createStore, applyMiddleware, combineReducers} from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import ReduxSaga from 'redux-saga';
-import {connect, Provider} from 'react-redux';
+import { rootSaga } from './sagas';
+import questionsReducer from './questionsReducer';
+import userReducer from './userReducer';
 const createSagaMiddleware = ReduxSaga.default;
-const { put, call } = ReduxSaga.effects;
-const { takeEvery } = ReduxSaga;
+
+const rootReducer = combineReducers({
+  questions: questionsReducer,
+  user: userReducer,
+});
+
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootSaga);
+export default store;

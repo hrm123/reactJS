@@ -5,13 +5,13 @@ const actionTypes = require('./actionTypes');
 
 
 // action creators
-const loadDataStarted = filter => ({ type: actionTypes.LOAD_QUESTIONS, filter });
+const loadDataStarted = filter => ({ type: actionTypes.LOAD_QUESTIONS, payload: filter });
 
-const loadDataSuccess = questions => ({ type: actionTypes.LOAD_QUESTIONS_SUCCESS, questions });
+const loadDataSuccess = questions => ({ type: actionTypes.LOAD_QUESTIONS_SUCCESS, payload: questions });
 
-const loadDataError = err => ({ type: actionTypes.LOAD_QUESTIONS_ERROR, err });
+const loadDataError = err => ({ type: actionTypes.LOAD_QUESTIONS_ERROR, payload: err });
 
-const emailChanged = newEmail => ({ type: actionTypes.EMAIL_CHANGED, newEmail });
+const emailChanged = newEmail => ({ type: actionTypes.EMAIL_CHANGED, payload: newEmail });
 
 const answerChanged = (qid, ans) => ({
   type: actionTypes.ANSWER_CHANGED,

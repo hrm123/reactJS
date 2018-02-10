@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Provider, connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+import store from './store/reduxstore';
 
 const App = () => (
   <div className="App">
@@ -14,4 +16,10 @@ const App = () => (
   </div>
 );
 
-export default App;
+const AppContainer = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+export default AppContainer;
