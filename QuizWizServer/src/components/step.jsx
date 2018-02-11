@@ -1,16 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid,no-debugger */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import QuestionList from './questionList';
 import Header from './header';
 import QuizNavLinks from './quizNavLinks';
 
 const Step = (props) => {
+  debugger;
   const currentStepId = props.stepId;
   const quizStepIds = props.questions.map(q => q.step);
-  const isfinalQuizStep = Math.max(...quizStepIds) === currentStepId;
-  const isfirstQuizStep = Math.min(...quizStepIds) === currentStepId;
+  const isfinalQuizStep = Math.max(...quizStepIds) == currentStepId;
+  const isfirstQuizStep = Math.min(...quizStepIds) == currentStepId;
+  const stepQues = props.questions.filter(q => q.step == currentStepId)
 
   if (props.questions) {
     return (
@@ -28,9 +29,9 @@ const Step = (props) => {
                       <div className="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
                         <div className="form-group">
                           <QuestionList
-                            questions={props.questions}
+                            questions={stepQues}
                             sid={props.stepId}
-                            notifyAnswerChanged={props.onAnswerChange}
+                            onUpdate={props.onAnswerChange}
                           />
                         </div>
                         <div className="form-group text-center">

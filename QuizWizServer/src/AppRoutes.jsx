@@ -32,7 +32,7 @@ class AppRoutes extends Component {
             component={() =>
               <UserDetailsWrapper stepId={0} userData={this.props.userData} />}
           />
-          <Route name="step" path="/step/:stepId" component={() => <StepWrapper stepId={1} />} />
+          <Route name="step" path="/step/:stepId?" component={ StepWrapper } />
           <Route name="summary" path="/summary" component={Summary} />
           <Route name="score" path="/scores" component={Scores} />
         </div>
@@ -41,20 +41,8 @@ class AppRoutes extends Component {
   }
 }
 
-AppRoutes.defaultProps = {
-  questions: null,
-};
-
 AppRoutes.propTypes = {
   fetchAppData: PropTypes.func.isRequired,
-  questions: PropTypes.arrayOf(PropTypes.shape({
-    question: PropTypes.string.isRequired,
-    answers: PropTypes.shape([PropTypes.string]),
-    scores: PropTypes.shape([PropTypes.number]),
-    userAnswer: PropTypes.string,
-    id: PropTypes.string.isRequired,
-    step: PropTypes.number.isRequired,
-  })),
   userData: PropTypes.shape({
     email: PropTypes.string,
   }).isRequired,

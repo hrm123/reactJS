@@ -49,7 +49,7 @@ class UserDetails extends Component {
                           />
                         </div>
                         <div className="form-group text-center">
-                          <Link to="/step/1">
+                          <Link to="step">
                             <button className="btn btn-success btn-outline-rounded btn-info"> Next <span style={{ marginLeft: 10 }} className="glyphicon glyphicon-arrow-right" /></button>
                           </Link>
                         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Answer extends Component {
   constructor(props) {
@@ -7,11 +8,6 @@ export default class Answer extends Component {
       sel: this.props.id === this.props.ua,
     };
   }
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
     answerChanged = (changeEvent) => {
       const dataChange = {
         answerId: this.props.id,
@@ -24,7 +20,7 @@ export default class Answer extends Component {
     }
 
     render() {
-      const ans = this.props.data;
+      const { ua } = this.props;
       return (
         <div className="row">
           <div className="col-sm-12" style={{ textAlign: 'left' }}>
@@ -32,9 +28,8 @@ export default class Answer extends Component {
               <input
                 type="radio"
                 name={this.props.groupName}
-                onChange={this.answerChanged.bind(this)}
-                checked={this.state.sel}
-              />&nbsp;&nbsp;{ans}
+                onChange={this.answerChanged}
+              />&nbsp;&nbsp;{ua}
             </label>
           </div>
         </div>
@@ -42,3 +37,12 @@ export default class Answer extends Component {
       );
     }
 }
+
+Answer.propTypes = {
+  ua: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  groupName: PropTypes.string.isRequired,
+  onUpdate: PropTypes.func.isRequired,
+  qid: PropTypes.string.isRequired,
+  sid: PropTypes.number.isRequired,
+};

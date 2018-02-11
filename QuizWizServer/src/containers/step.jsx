@@ -2,9 +2,6 @@
 /**
  * Created by Ramm on 2/11/2018.
  */
-/**
- * Created by Ramm on 2/11/2018.
- */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -22,7 +19,7 @@ class StepWrapper extends Component {
     return (
       <Step
         stepId={this.props.stepId}
-        questions={this.props.stepQuestions}
+        questions={this.props.ques}
         notifyAnswerChanged={this.handleAnswerChanged}
       />
     );
@@ -36,7 +33,7 @@ StepWrapper.defaultProps = {
 StepWrapper.propTypes = {
   onAnswerChanged: PropTypes.func.isRequired,
   stepId: PropTypes.number,
-  stepQuestions: PropTypes.arrayOf(PropTypes.shape({
+  ques: PropTypes.arrayOf(PropTypes.shape({
     question: PropTypes.string.isRequired,
     answers: PropTypes.shape([PropTypes.string]),
     scores: PropTypes.shape([PropTypes.number]),
@@ -47,11 +44,14 @@ StepWrapper.propTypes = {
 };
 
 
-const mapStateToProps = (state, ownProps) => ({
-  stepId: ownProps.stepId,
-  stepQuestions: state.questions.loading ? [{}] :
-    state.questions.questions.filter(q => q.step == ownProps.stepId),
-});
+const mapStateToProps = (state, ownProps) => {
+  debugger;
+  return {
+    stepId: ownProps.match.params.stepId ? (ownProps.match.params.stepId + '') - 0 : 1,
+    ques: state.questions.loading ? [{}] :
+      state.questions.questions,
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   onAnswerChanged: (qid, ans) => {

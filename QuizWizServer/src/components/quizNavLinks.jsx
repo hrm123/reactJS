@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const QuizNavLinks = (props) => {
+  const prevStepId = props.currentStepId-1;
+  const nextStepId = props.currentStepId+1;
   if (props.isfinalQuizStep && props.isfirstQuizStep) {
     return (
       <div>
@@ -29,7 +31,7 @@ const QuizNavLinks = (props) => {
   } else if (props.isfinalQuizStep) {
     return (
       <div>
-        <Link to="/step/{props.currentStepId-1}">
+        <Link to={`/step/${prevStepId}`}>
           <button className="btn btn-success btn-outline-rounded btn-info"> Prev <span
             style={{ marginLeft: 10 }}
             className="glyphicon glyphicon-arrow-left"
@@ -55,7 +57,7 @@ const QuizNavLinks = (props) => {
           />
           </button>
         </Link>
-        <Link to="/step/{currentStepId+1}">
+        <Link to={`/step/${nextStepId}`}>
           <button className="btn btn-success btn-outline-rounded btn-info"> Next <span
             style={{ marginLeft: 10 }}
             className="glyphicon glyphicon-arrow-right"
@@ -67,14 +69,14 @@ const QuizNavLinks = (props) => {
   } else if (!props.isfinalQuizStep && !props.isfirstQuizStep) {
     return (
       <div>
-        <Link to="/step/{props.currentStepId-1}">
+        <Link to={`/step/${prevStepId}`}>
           <button className="btn btn-success btn-outline-rounded btn-info"> Prev <span
             style={{ marginLeft: 10 }}
             className="glyphicon glyphicon-arrow-left"
           />
           </button>
         </Link>
-        <Link to="/step/{props.currentStepId+1}">
+        <Link to={`/step/${nextStepId}`}>
           <button className="btn btn-success btn-outline-rounded btn-info"> Next <span
             style={{ marginLeft: 10 }}
             className="glyphicon glyphicon-arrow-right"
