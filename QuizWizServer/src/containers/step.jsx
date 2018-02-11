@@ -17,11 +17,8 @@ class StepWrapper extends Component {
     this.props.onAnswerChanged(qid, ans);
   };
 
-  componentWillUnmount(){
-    debugger;
-  }
-
   render() {
+    debugger;
     return (
       <Step
         stepId={this.props.stepId}
@@ -32,7 +29,7 @@ class StepWrapper extends Component {
   }
 }
 
-StepWrapper.defaultPros = {
+StepWrapper.defaultProps = {
   stepId: 1,
 };
 

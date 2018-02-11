@@ -9,10 +9,6 @@ import actions from '../store/actions';
 import UserDetails from '../components/userDetails';
 
 class UserDetailsWrapper extends Component {
-  componentWillUnmount() {
-    debugger;
-  }
-
   emailChanged = (newEmail) => {
     console.log(newEmail);
     this.props.onEmailChanged(newEmail);

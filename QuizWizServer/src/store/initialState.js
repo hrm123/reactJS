@@ -6,4 +6,5 @@ export default {
   user: {
     email: '',
   },
+  quizStepId: 0,
 };

@@ -25,8 +25,14 @@ class AppRoutes extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Route name="home" path="/" exact component={() => <UserDetailsWrapper stepId={0} userData={this.props.userData} />} />
-          <Route name="step" path="/step" component={() => <StepWrapper stepId={1} />} />
+          <Route
+            name="home"
+            path="/"
+            exact
+            component={() =>
+              <UserDetailsWrapper stepId={0} userData={this.props.userData} />}
+          />
+          <Route name="step" path="/step/:stepId" component={() => <StepWrapper stepId={1} />} />
           <Route name="summary" path="/summary" component={Summary} />
           <Route name="score" path="/scores" component={Scores} />
         </div>
