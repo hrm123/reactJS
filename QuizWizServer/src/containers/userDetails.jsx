@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /**
  * Created by Ramm on 2/11/2018.
  */
@@ -8,6 +9,10 @@ import actions from '../store/actions';
 import UserDetails from '../components/userDetails';
 
 class UserDetailsWrapper extends Component {
+  componentWillUnmount() {
+    debugger;
+  }
+
   emailChanged = (newEmail) => {
     console.log(newEmail);
     this.props.onEmailChanged(newEmail);
@@ -26,16 +31,17 @@ UserDetailsWrapper.propTypes = {
   userData: PropTypes.shape({
     email: PropTypes.string,
   }).isRequired,
+  stepId: PropTypes.number.isRequired,
 };
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
+  stepId: ownProps.stepId,
   userData: state.user,
 });
 
 const mapDispatchToProps = dispatch => ({
   onEmailChanged: (newVal) => {
-    debugger;
     dispatch(actions.emailChanged(newVal));
   },
 });

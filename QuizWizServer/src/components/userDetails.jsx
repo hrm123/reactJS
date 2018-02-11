@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './header';
 
@@ -25,7 +25,7 @@ class UserDetails extends Component {
               <Header step="1" />
               <div className="tab-content">
                 <div className="tab-pane fade in active">
-                  <h4 className="head text-center">step1</h4>
+                  <h4 className="head text-center">Details</h4>
                   <br />
                   <form id="Form">
                     <div className="row">
@@ -49,9 +49,9 @@ class UserDetails extends Component {
                           />
                         </div>
                         <div className="form-group text-center">
-                          <NavLink to="/step" stepId="1">
-                            <button className="btn btn-success btn-outline-rounded btn-info"> Next <span style={{ 'margin-left': '10px;' }} className="glyphicon glyphicon-arrow-right" /></button>
-                          </NavLink>
+                          <Link to="/step" params={{ stepId: '1' }}>
+                            <button className="btn btn-success btn-outline-rounded btn-info"> Next <span style={{ marginLeft: 10 }} className="glyphicon glyphicon-arrow-right" /></button>
+                          </Link>
                         </div>
                       </div>
                     </div>

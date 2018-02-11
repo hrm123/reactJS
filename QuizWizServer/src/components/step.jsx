@@ -1,20 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import QuestionList from './questionList';
+import Header from './header';
 
-const Step = props => (
-  <div className="App">
-    <div className="step step2 container">
-      <form id="Form" className="form-horizontal">
-        <QuestionList
-          questions={props.questions}
-          sid={props.stepId}
-          notifyAnswerChanged={props.onAnswerChange}
-        />
-      </form>
-    </div>
-  </div>
-);
+const Step = (props) => {
+  if (props.questions) {
+    return (
+      <section style={{ background: '#efefe9' }}>
+        <div className="container">
+          <div className="row">
+            <div className="board">
+              <Header step="1" />
+              <div className="tab-content">
+                <div className="tab-pane fade in active">
+                  <h4 className="head text-center">Quiz</h4>
+                  <br />
+                  <form id="Form">
+                    <QuestionList
+                      questions={props.questions}
+                      sid={props.stepId}
+                      notifyAnswerChanged={props.onAnswerChange}
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  return null;
+};
 
 Step.propTypes = {
   onAnswerChange: PropTypes.func.isRequired,

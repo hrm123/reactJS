@@ -5,50 +5,50 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import actions from '../src/store/actions';
 
 import UserDetailsWrapper from './containers/userDetails';
-import Step from './components/step';
+import StepWrapper from './containers/step';
 import Summary from './components/summary';
 import Scores from './components/scores';
 
 class AppRoutes extends Component {
   componentDidMount() {
-    console.log('routes - componentDidMount');
     this.props.fetchAppData('');
   }
 
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div>
-          <Route path="/" component={() => <UserDetailsWrapper userData={this.props.userData} />} />
-          <Route path="/step" component={Step} ques={this.props.questions} />
-          <Route path="/summary" component={Summary} />
-          <Route path="/scores" component={Scores} />
+          <Route name="home" path="/" exact component={() => <UserDetailsWrapper stepId={0} userData={this.props.userData} />} />
+          <Route name="step" path="/step" component={() => <StepWrapper stepId={1} />} />
+          <Route name="summary" path="/summary" component={Summary} />
+          <Route name="score" path="/scores" component={Scores} />
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
 
+AppRoutes.defaultProps = {
+  questions: null,
+};
 
 AppRoutes.propTypes = {
   fetchAppData: PropTypes.func.isRequired,
-  questions: PropTypes.shape([
-    {
-      question: PropTypes.string.isRequired,
-      answers: PropTypes.shape([PropTypes.string]),
-      scores: PropTypes.shape([PropTypes.number]),
-      userAnswer: PropTypes.string,
-      id: PropTypes.string.isRequired,
-      step: PropTypes.number.isRequired,
-    },
-  ]).isRequired,
+  questions: PropTypes.arrayOf(PropTypes.shape({
+    question: PropTypes.string.isRequired,
+    answers: PropTypes.shape([PropTypes.string]),
+    scores: PropTypes.shape([PropTypes.number]),
+    userAnswer: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    step: PropTypes.number.isRequired,
+  })),
   userData: PropTypes.shape({
     email: PropTypes.string,
   }).isRequired,
@@ -61,12 +61,10 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const mapStateToProps = (state) => {
-  return {
-    userData: state.user,
-    questions: state.questions.loading ? [] : state.questions.questions,
-  };
-};
+const mapStateToProps = state => ({
+  userData: state.user,
+  questions: state.questions.loading ? [{}] : state.questions.questions,
+});
 
 export default connect(
   mapStateToProps,
