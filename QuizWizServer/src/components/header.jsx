@@ -7,19 +7,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => (
-  <section style={{ background: '#efefe9' }}>
-    <div className="container">
-      <div className="row">
-        <div className="board">
           <div className="board-inner" id="status-buttons">
             <ul className="nav nav-tabs" id="myTab">
               <div className="liner" />
 
               <li>
-                <span className="round-tabs one">
-                  <i className="glyphicon glyphicon-user" />
-                </span>
-                <Link to="/">Home</Link>
+                <Link to="/">
+                  <span className="round-tabs one">
+                    <i className="glyphicon glyphicon-user" />
+                  </span>
+                </Link>
               </li>
 
               <li>
@@ -48,10 +45,6 @@ const Header = () => (
             </ul>
             <div className="clearfix" />
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 );
 
 export default Header;

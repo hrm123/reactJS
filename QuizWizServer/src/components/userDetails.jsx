@@ -17,30 +17,41 @@ class UserDetails extends Component {
 
   render() {
     return (
-      <div>
-        <Header step="1" />
-        <div className="step step1">
+      <section style={{ background: '#efefe9' }}>
+        <div className="container">
           <div className="row">
-            <form id="Form" className="form-horizontal">
-              <div className="form-group col-md-12 content form-block-holder">
-                <label className="control-label col-md-4">
-                            Email
-                </label>
-                <div>
-                  <input
-                    autoComplete="off"
-                    type="email"
-                    placeholder="john.smith@example.com"
-                    className="form-control"
-                    required
-                    defaultValue={this.state.email}
-                  />
+            <div className="board">
+              <Header step="1" />
+              <div className="tab-content">
+                <div className="tab-pane fade in active">
+                  <h4 className="head text-center">step1</h4>
+                  <br />
+                  <form id="Form">
+                    <div className="row">
+                      <div className="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
+                        <div className="form-group">
+                          <label className="control-label">Email</label>
+                          <input
+                            autoComplete="off"
+                            type="email"
+                            placeholder="john.smith@example.com"
+                            className="form-control input-md"
+                            required
+                            defaultValue={this.state.email}
+                          />
+                        </div>
+                        <div className="form-group text-center">
+                          <button className="btn btn-success btn-outline-rounded btn-info"> Next <span style={{ 'margin-left': '10px;' }} className="glyphicon glyphicon-arrow-right" /></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
