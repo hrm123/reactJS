@@ -25,15 +25,14 @@ class QuestionList extends Component {
 QuestionList.propTypes = {
   onUpdate: PropTypes.func.isRequired,
   sid: PropTypes.number.isRequired,
-  questions: PropTypes.shape([
-    {
-      question: PropTypes.string.isRequired,
-      answers: PropTypes.shape([PropTypes.string]),
-      scores: PropTypes.shape([PropTypes.number]),
-      userAnswer: PropTypes.string,
-      id: PropTypes.string.isRequired,
-      step: PropTypes.number.isRequired,
-    }]).isRequired,
+  questions: PropTypes.arrayOf(PropTypes.shape({
+    question: PropTypes.string.isRequired,
+    answers: PropTypes.arrayOf(PropTypes.string),
+    scores: PropTypes.arrayOf(PropTypes.number),
+    userAnswer: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    step: PropTypes.number.isRequired,
+  })).isRequired,
 };
 
 export default QuestionList;

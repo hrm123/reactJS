@@ -13,7 +13,7 @@ import actions from '../src/store/actions';
 
 import UserDetailsWrapper from './containers/userDetails';
 import StepWrapper from './containers/step';
-import Summary from './components/summary';
+import Summarywrapper from './containers/summary';
 import Scores from './components/scores';
 
 class AppRoutes extends Component {
@@ -33,7 +33,7 @@ class AppRoutes extends Component {
               <UserDetailsWrapper stepId={0} userData={this.props.userData} />}
           />
           <Route name="step" path="/step/:stepId?" component={ StepWrapper } />
-          <Route name="summary" path="/summary" component={Summary} />
+          <Route name="summary" path="/summary" component={Summarywrapper} />
           <Route name="score" path="/scores" component={Scores} />
         </div>
       </BrowserRouter>

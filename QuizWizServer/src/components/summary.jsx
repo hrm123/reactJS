@@ -1,7 +1,9 @@
+/* eslint-disable no-debugger */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const Summary = (props) => {
+  debugger;
   const steps1Data = props.questions.filter(q => q.step === 1);
   const steps2Data = props.questions.filter(q => q.step === 2);
   const steps3Data = props.questions.filter(q => q.step === 3);

@@ -10,17 +10,16 @@ import Step from '../components/step';
 
 class StepWrapper extends Component {
   handleAnswerChanged = (qid, ans) => {
-    console.log('handleAnswerChanged');
+    debugger;
     this.props.onAnswerChanged(qid, ans);
   };
 
   render() {
-    debugger;
     return (
       <Step
         stepId={this.props.stepId}
         questions={this.props.ques}
-        notifyAnswerChanged={this.handleAnswerChanged}
+        onAnswerChange={this.handleAnswerChanged}
       />
     );
   }
@@ -35,8 +34,8 @@ StepWrapper.propTypes = {
   stepId: PropTypes.number,
   ques: PropTypes.arrayOf(PropTypes.shape({
     question: PropTypes.string.isRequired,
-    answers: PropTypes.shape([PropTypes.string]),
-    scores: PropTypes.shape([PropTypes.number]),
+    answers: PropTypes.arrayOf(PropTypes.string),
+    scores: PropTypes.arrayOf(PropTypes.number),
     userAnswer: PropTypes.string,
     id: PropTypes.string.isRequired,
     step: PropTypes.number.isRequired,

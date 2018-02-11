@@ -9,9 +9,9 @@ const Step = (props) => {
   debugger;
   const currentStepId = props.stepId;
   const quizStepIds = props.questions.map(q => q.step);
-  const isfinalQuizStep = Math.max(...quizStepIds) == currentStepId;
-  const isfirstQuizStep = Math.min(...quizStepIds) == currentStepId;
-  const stepQues = props.questions.filter(q => q.step == currentStepId)
+  const isfinalQuizStep = Math.max(...quizStepIds) === currentStepId;
+  const isfirstQuizStep = Math.min(...quizStepIds) === currentStepId;
+  const stepQues = props.questions.filter(q => q.step === currentStepId)
 
   if (props.questions) {
     return (
@@ -58,15 +58,14 @@ const Step = (props) => {
 Step.propTypes = {
   onAnswerChange: PropTypes.func.isRequired,
   stepId: PropTypes.number.isRequired,
-  questions: PropTypes.shape([
-    {
-      question: PropTypes.string.isRequired,
-      answers: PropTypes.shape([PropTypes.string]),
-      scores: PropTypes.shape([PropTypes.number]),
-      userAnswer: PropTypes.string,
-      id: PropTypes.string.isRequired,
-      step: PropTypes.number.isRequired,
-    }]).isRequired,
+  questions: PropTypes.arrayOf(PropTypes.shape({
+    question: PropTypes.string.isRequired,
+    answers: PropTypes.arrayOf(PropTypes.string),
+    scores: PropTypes.arrayOf(PropTypes.number),
+    userAnswer: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    step: PropTypes.number.isRequired,
+  })).isRequired,
 };
 
 export default Step;

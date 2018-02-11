@@ -16,11 +16,10 @@ export default class Answer extends Component {
         sel: changeEvent.target.value,
       };
       this.setState({ sel: (changeEvent.target.value === 'on') });
-      this.props.onUpdate(dataChange);
+      this.props.onUpdate(this.props.qid, this.props.ans);
     }
 
     render() {
-      const { ua } = this.props;
       return (
         <div className="row">
           <div className="col-sm-12" style={{ textAlign: 'left' }}>
@@ -29,7 +28,7 @@ export default class Answer extends Component {
                 type="radio"
                 name={this.props.groupName}
                 onChange={this.answerChanged}
-              />&nbsp;&nbsp;{ua}
+              />&nbsp;&nbsp;{this.props.ans}
             </label>
           </div>
         </div>
@@ -40,6 +39,7 @@ export default class Answer extends Component {
 
 Answer.propTypes = {
   ua: PropTypes.string.isRequired,
+  ans: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   groupName: PropTypes.string.isRequired,
   onUpdate: PropTypes.func.isRequired,

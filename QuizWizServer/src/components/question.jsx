@@ -45,8 +45,8 @@ Question.propTypes = {
   onUpdate: PropTypes.func.isRequired,
   question: PropTypes.shape({
     question: PropTypes.string.isRequired,
-    answers: PropTypes.shape([PropTypes.string]),
-    scores: PropTypes.shape([PropTypes.number]),
+    answers: PropTypes.arrayOf(PropTypes.string),
+    scores: PropTypes.arrayOf(PropTypes.number),
     id: PropTypes.string.isRequired,
     step: PropTypes.number.isRequired,
     userAnswer: PropTypes.string.isRequired,
