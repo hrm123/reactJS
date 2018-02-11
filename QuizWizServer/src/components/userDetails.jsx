@@ -18,35 +18,35 @@ class UserDetails extends Component {
   render() {
     return (
       <div>
-      <Header step="1" />
-      <div className="step step1">
-        <div className="row">
-          <form id="Form" className="form-horizontal">
-            <div className="form-group col-md-12 content form-block-holder">
-              <label className="control-label col-md-4">
+        <Header step="1" />
+        <div className="step step1">
+          <div className="row">
+            <form id="Form" className="form-horizontal">
+              <div className="form-group col-md-12 content form-block-holder">
+                <label className="control-label col-md-4">
                             Email
-              </label>
-              <div>
-                <input
-                  autoComplete="off"
-                  type="email"
-                  placeholder="john.smith@example.com"
-                  className="form-control"
-                  required
-                  defaultValue={this.state.email}
-                />
+                </label>
+                <div>
+                  <input
+                    autoComplete="off"
+                    type="email"
+                    placeholder="john.smith@example.com"
+                    className="form-control"
+                    required
+                    defaultValue={this.state.email}
+                  />
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
       </div>
     );
   }
 }
 
 UserDetails.propTypes = {
-  email: PropTypes.string.required,
+  email: PropTypes.string.isRequired,
 };
 
 export default UserDetails;

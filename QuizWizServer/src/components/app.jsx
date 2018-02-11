@@ -32,7 +32,7 @@ class App extends Component {
 
     const steps =
       [
-        { name: 'Step 2', component: <UserDetails stepId="0" data={this.props.userData} notifyEmailChanged={this.handleEmailChange} /> },
+        { name: 'Step 2', component: <UserDetails stepId="0" email="" data={this.props.userData} notifyEmailChanged={this.handleEmailChange} /> },
         { name: 'Step 3', component: <Step2 stepId="2" questions={step1Questions} notifyEmailChanged={this.handleAnswerChanged} /> },
         { name: 'Step 5', component: <Step5 stepId="3" /> },
         { name: 'Step 6', component: <Step6 stepId="4" /> },

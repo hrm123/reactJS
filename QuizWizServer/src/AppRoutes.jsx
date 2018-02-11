@@ -16,7 +16,7 @@ import Scores from './components/scores';
 const AppRoutes = () => (
   <HashRouter>
     <div>
-      <Route path="/" component={UserDetails} />
+      <Route path="/" component={() => <UserDetails email="" />} />
       <Route path="/step" component={Step} />
       <Route path="/summary" component={Summary} />
       <Route path="/scores" component={Scores} />
