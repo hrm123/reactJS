@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './header';
 
 class UserDetails extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: this.props.email,
     };
@@ -38,10 +39,19 @@ class UserDetails extends Component {
                             className="form-control input-md"
                             required
                             defaultValue={this.state.email}
+                            onChange={(e) => {
+                              this.setState({ email: e.target.value });
+                            }}
+                            onBlur={() => {
+                              this.props.notifyEmailChanged(this.state.email);
+                              }
+                            }
                           />
                         </div>
                         <div className="form-group text-center">
-                          <button className="btn btn-success btn-outline-rounded btn-info"> Next <span style={{ 'margin-left': '10px;' }} className="glyphicon glyphicon-arrow-right" /></button>
+                          <NavLink to="/step" stepId="1">
+                            <button className="btn btn-success btn-outline-rounded btn-info"> Next <span style={{ 'margin-left': '10px;' }} className="glyphicon glyphicon-arrow-right" /></button>
+                          </NavLink>
                         </div>
                       </div>
                     </div>
@@ -58,6 +68,7 @@ class UserDetails extends Component {
 
 UserDetails.propTypes = {
   email: PropTypes.string.isRequired,
+  notifyEmailChanged: PropTypes.func.isRequired,
 };
 
 export default UserDetails;

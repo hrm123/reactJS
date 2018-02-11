@@ -6,22 +6,22 @@ import { put, call, takeEvery } from 'redux-saga/effects';
 import actionTypes from './actionTypes';
 import actions from './actions';
 
-/*eslint-disable */
-
 const getAppDataAPI = (query) => {
   const baseUrl = 'http://localhost:3004/questions';
 
-  const fullUrl = query ? baseUrl + query.payload : baseUrl;
-  console.log('getAppDataAPI');
+  const fullUrl = query ? (baseUrl + query.payload) : baseUrl;
+  console.log(`getAppDataAPI - ${fullUrl}`);
   return axios.get(fullUrl, {
     headers: {
       Accept: 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
-  }).then(res => {
+  }).then((res) => {
+    console.log(res.data);
     return res.data;
   })
     .catch((error) => {
-      debugger;
+      console.log(error);
       throw error;
     });
 };
@@ -32,6 +32,7 @@ export function* getAppdataSaga(query) {
     const result = yield call(getAppDataAPI, query);
     yield put(actions.loadDataSuccess(result));
   } catch (err) {
+    console.log(err);
     yield put(actions.loadDataError(err));
   }
 }

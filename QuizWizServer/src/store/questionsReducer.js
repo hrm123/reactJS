@@ -15,7 +15,8 @@ const questionsReducer = (currentState = initState.questions, action) => {
     case actionTypes.LOAD_QUESTIONS_SUCCESS:
       return Object.assign({}, currentState, {
         loading: false,
-      },{questions : action.payload });
+        questions : action.payload
+      });
     case actionTypes.LOAD_QUESTIONS_ERROR:
       return Object.assign({}, currentState, {
         loading: false,

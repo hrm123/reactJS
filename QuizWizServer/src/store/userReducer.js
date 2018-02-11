@@ -9,7 +9,6 @@ const actionTypes = require('./actionTypes');
 const userReducer = (currentState = initState.user, action) => {
   switch (action.type) {
     case actionTypes.EMAIL_CHANGED:
-      debugger;
       return Object.assign({}, currentState, {
         email: action.payload,
       });
