@@ -6,7 +6,6 @@ import Header from './header';
 import QuizNavLinks from './quizNavLinks';
 
 const Step = (props) => {
-  debugger;
   const currentStepId = props.stepId;
   const quizStepIds = props.questions.map(q => q.step);
   const isfinalQuizStep = Math.max(...quizStepIds) === currentStepId;

@@ -12,7 +12,6 @@ import Summary from '../components/summary';
 
 class SummaryWrapper extends Component {
   render() {
-    debugger;
     return (
       <Summary
         questions={this.props.ques}
@@ -36,7 +35,6 @@ SummaryWrapper.propTypes = {
 
 
 const mapStateToProps = (state) => {
-  debugger;
   return {
     ques: state.questions.loading ? [{}] :
       state.questions.questions,

@@ -10,7 +10,6 @@ import Step from '../components/step';
 
 class StepWrapper extends Component {
   handleAnswerChanged = (qid, ans) => {
-    debugger;
     this.props.onAnswerChanged(qid, ans);
   };
 
@@ -44,7 +43,6 @@ StepWrapper.propTypes = {
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     stepId: ownProps.match.params.stepId ? (ownProps.match.params.stepId + '') - 0 : 1,
     ques: state.questions.loading ? [{}] :

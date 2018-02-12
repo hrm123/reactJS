@@ -27,7 +27,7 @@ const questionsReducer = (currentState = initState.questions, action) => {
       var editedQuestion = Object.assign({}, targetQuestion[0], {userAnswer: action.payload.a });
       var clonedArray = JSON.parse(JSON.stringify(currentState.questions));
       clonedArray.splice(editedIndex, 1, editedQuestion );
-      return Object.assign({}, currentState, clonedArray);
+      return Object.assign({}, currentState, { "questions": clonedArray });
     default:
       return currentState;
   }
