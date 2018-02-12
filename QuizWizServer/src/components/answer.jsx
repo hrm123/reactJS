@@ -9,12 +9,6 @@ export default class Answer extends Component {
     };
   }
     answerChanged = (changeEvent) => {
-      const dataChange = {
-        answerId: this.props.id,
-        questionId: this.props.qid,
-        stepId: this.props.sid,
-        sel: changeEvent.target.value,
-      };
       this.setState({ sel: (changeEvent.target.value === 'on') });
       this.props.onUpdate(this.props.qid, this.props.ans);
     }

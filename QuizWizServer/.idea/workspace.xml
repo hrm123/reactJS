@@ -15,7 +15,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.7834941">
+    <splitter split-orientation="vertical" split-proportion="0.5744909">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
@@ -79,8 +79,8 @@
           <file leaf-file-name="AppRoutes.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AppRoutes.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="298">
-                  <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+                <state relative-caret-position="217">
+                  <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="e#33#73#0" expanded="false" />
@@ -90,13 +90,38 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="summary.jsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="summary.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/summary.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="81">
-                  <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+                <state relative-caret-position="243">
+                  <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#33#59#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="scores.jsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/containers/scores.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#74#115#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="scores.jsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/scores.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="328">
+                  <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -105,21 +130,9 @@
           <file leaf-file-name="sagas.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/store/sagas.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+                <state relative-caret-position="351">
+                  <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="root.jsx" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/root.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="453">
-                  <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-                  <folding>
-                    <element signature="e#41#82#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -143,8 +156,8 @@
           <file leaf-file-name="answer.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/answer.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                <state relative-caret-position="54">
+                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -155,8 +168,8 @@
           <file leaf-file-name="step.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/step.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="166">
-                  <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="30" />
+                <state relative-caret-position="301">
+                  <caret line="40" column="17" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="40" selection-end-column="17" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="e#33#73#0" expanded="false" />
@@ -166,7 +179,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="userDetails.jsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="userDetails.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/userDetails.jsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="54">
@@ -178,11 +191,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="summary.jsx" pinned="false" current-in-tab="false">
+          <file leaf-file-name="summary.jsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/summary.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="999">
-                  <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+                <state relative-caret-position="139">
+                  <caret line="26" column="12" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="31" selection-end-column="17" />
                   <folding>
                     <element signature="e#74#114#0" expanded="false" />
                     <element signature="e#115#156#0" expanded="true" />
@@ -194,11 +207,29 @@
           <file leaf-file-name="step.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/step.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="12" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                <state relative-caret-position="-404">
+                  <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="e#58#84#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="quizNavLinks.jsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/quizNavLinks.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="100">
+                  <caret line="71" column="38" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="40" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#46#86#0" expanded="false" />
+                    <element signature="e#87#113#0" expanded="true" />
+                    <marker date="1518385939467" expanded="true" signature="1106:1244" ph="..." />
+                    <marker date="1518385939467" expanded="true" signature="1118:1224" ph="..." />
+                    <marker date="1518385939467" expanded="true" signature="1365:1504" ph="..." />
+                    <marker date="1518385939467" expanded="true" signature="1377:1484" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -217,17 +248,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>marghinLef</find>
-      <find>marghinLeft</find>
-      <find>marginLeft</find>
-      <find>st</find>
-      <find>state.</find>
-      <find>state.l</find>
-      <find>state.lo</find>
-      <find>state.loa</find>
-      <find>state.load</find>
-      <find>state.loading</find>
-      <find>state.oading</find>
       <find>state.Loading</find>
       <find>questions</find>
       <find>questions.</find>
@@ -240,13 +260,24 @@
       <find>stepQuestions</find>
       <find>props.</find>
       <find>mapDispatchToProps</find>
-      <find>ans</find>
       <find>questions.loading</find>
       <find>.loading</find>
       <find>d</find>
-      <find>de</find>
       <find>debug</find>
+      <find>de</find>
       <find>debugger</find>
+      <find>ge</find>
+      <find>get</find>
+      <find>getApp</find>
+      <find>getAppD</find>
+      <find>getAppDa</find>
+      <find>getAppData</find>
+      <find>c</find>
+      <find>co</find>
+      <find>console.</find>
+      <find>console.l</find>
+      <find>console.log</find>
+      <find>ans</find>
     </findStrings>
     <replaceStrings>
       <replace>className</replace>
@@ -276,7 +307,6 @@
         <option value="$PROJECT_DIR$/src/store/reduxstore.js" />
         <option value="$PROJECT_DIR$/src/components/repos.js" />
         <option value="$PROJECT_DIR$/src/AppRoutes.js" />
-        <option value="$PROJECT_DIR$/src/components/scores.jsx" />
         <option value="$PROJECT_DIR$/src/components/footer.js" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/components/app.jsx" />
@@ -291,15 +321,18 @@
         <option value="$PROJECT_DIR$/src/components/quizNavLinks.js" />
         <option value="$PROJECT_DIR$/src/components/quizNavLinks.jsx" />
         <option value="$PROJECT_DIR$/src/components/userDetails.jsx" />
-        <option value="$PROJECT_DIR$/src/AppRoutes.jsx" />
-        <option value="$PROJECT_DIR$/src/containers/summary.jsx" />
-        <option value="$PROJECT_DIR$/src/components/answer.jsx" />
         <option value="$PROJECT_DIR$/src/containers/step.jsx" />
         <option value="$PROJECT_DIR$/src/components/step.jsx" />
         <option value="$PROJECT_DIR$/src/components/questionList.jsx" />
         <option value="$PROJECT_DIR$/src/components/question.jsx" />
         <option value="$PROJECT_DIR$/src/store/questionsReducer.js" />
+        <option value="$PROJECT_DIR$/src/containers/scores.js" />
+        <option value="$PROJECT_DIR$/src/containers/summary.jsx" />
         <option value="$PROJECT_DIR$/src/components/summary.jsx" />
+        <option value="$PROJECT_DIR$/src/AppRoutes.jsx" />
+        <option value="$PROJECT_DIR$/src/components/answer.jsx" />
+        <option value="$PROJECT_DIR$/src/containers/scores.jsx" />
+        <option value="$PROJECT_DIR$/src/components/scores.jsx" />
       </list>
     </option>
   </component>
@@ -566,12 +599,12 @@
       <workItem from="1518140996129" duration="486000" />
       <workItem from="1518141489634" duration="1481000" />
       <workItem from="1518175600347" duration="3372000" />
-      <workItem from="1518252666970" duration="66625000" />
+      <workItem from="1518252666970" duration="68732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93956000" />
+    <option name="totallyTimeSpent" value="96063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1698" height="1068" extended-state="6" />
@@ -610,17 +643,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="4860">
-            <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -801,16 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/scores.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/repos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -851,14 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/scores.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -873,11 +877,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#33#73#0" expanded="false" />
-            <element signature="e#74#115#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -896,22 +896,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#46#86#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/quizNavLinks.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#46#86#0" expanded="false" />
-            <element signature="e#87#113#0" expanded="true" />
-            <marker date="1518385939467" expanded="true" signature="1106:1244" ph="..." />
-            <marker date="1518385939467" expanded="true" signature="1118:1224" ph="..." />
-            <marker date="1518385939467" expanded="true" signature="1365:1504" ph="..." />
-            <marker date="1518385939467" expanded="true" signature="1377:1484" ph="..." />
           </folding>
         </state>
       </provider>
@@ -955,34 +939,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/answer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/questionList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="35" column="2" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/step.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#33#73#0" expanded="false" />
-            <element signature="e#74#115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -999,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/sagas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="351">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1015,45 +977,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/summary.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding>
-            <element signature="e#74#114#0" expanded="false" />
-            <element signature="e#115#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/questionsReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppRoutes.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#33#73#0" expanded="false" />
-            <element signature="e#74#115#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/step.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#58#84#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1067,12 +995,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/summary.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/step.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="-404">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#58#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/scores.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/quizNavLinks.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="71" column="38" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#46#86#0" expanded="false" />
+            <element signature="e#87#113#0" expanded="true" />
+            <marker date="1518385939467" expanded="true" signature="1106:1244" ph="..." />
+            <marker date="1518385939467" expanded="true" signature="1118:1224" ph="..." />
+            <marker date="1518385939467" expanded="true" signature="1365:1504" ph="..." />
+            <marker date="1518385939467" expanded="true" signature="1377:1484" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/step.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="40" column="17" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="40" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#33#73#0" expanded="false" />
+            <element signature="e#74#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppRoutes.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#33#73#0" expanded="false" />
+            <element signature="e#74#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/summary.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#33#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/answer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/summary.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="26" column="12" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="31" selection-end-column="17" />
+          <folding>
+            <element signature="e#74#114#0" expanded="false" />
+            <element signature="e#115#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/scores.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="e#74#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/scores.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

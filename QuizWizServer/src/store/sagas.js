@@ -10,14 +10,12 @@ const getAppDataAPI = (query) => {
   const baseUrl = 'http://localhost:3004/questions';
 
   const fullUrl = query ? (baseUrl + query.payload) : baseUrl;
-  console.log(`getAppDataAPI - ${fullUrl}`);
   return axios.get(fullUrl, {
     headers: {
       Accept: 'application/json',
       'Access-Control-Allow-Origin': '*'
     },
   }).then((res) => {
-    console.log(res.data);
     return res.data;
   })
     .catch((error) => {

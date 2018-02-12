@@ -10,7 +10,6 @@ import UserDetails from '../components/userDetails';
 
 class UserDetailsWrapper extends Component {
   emailChanged = (newEmail) => {
-    console.log(newEmail);
     this.props.onEmailChanged(newEmail);
   };
 

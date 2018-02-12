@@ -14,7 +14,7 @@ import actions from '../src/store/actions';
 import UserDetailsWrapper from './containers/userDetails';
 import StepWrapper from './containers/step';
 import Summarywrapper from './containers/summary';
-import Scores from './components/scores';
+import ScoresWrapper from './containers/scores';
 
 class AppRoutes extends Component {
   componentDidMount() {
@@ -34,7 +34,7 @@ class AppRoutes extends Component {
           />
           <Route name="step" path="/step/:stepId?" component={ StepWrapper } />
           <Route name="summary" path="/summary" component={Summarywrapper} />
-          <Route name="score" path="/scores" component={Scores} />
+          <Route name="results" path="/results" component={ScoresWrapper} />
         </div>
       </BrowserRouter>
     );

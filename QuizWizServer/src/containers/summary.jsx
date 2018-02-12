@@ -24,8 +24,8 @@ class SummaryWrapper extends Component {
 SummaryWrapper.propTypes = {
   ques: PropTypes.arrayOf(PropTypes.shape({
     question: PropTypes.string.isRequired,
-    answers: PropTypes.shape([PropTypes.string]),
-    scores: PropTypes.shape([PropTypes.number]),
+    answers: PropTypes.arrayOf(PropTypes.string),
+    scores: PropTypes.arrayOf(PropTypes.number),
     userAnswer: PropTypes.string,
     id: PropTypes.string.isRequired,
     step: PropTypes.number.isRequired,
