@@ -20,7 +20,6 @@ class DrawingList extends Component {
   };
 
   render() {
-    debugger;
     const drawings = this.state.drawings.map(drawing => (
       <li
         className="DrawingList-item"
