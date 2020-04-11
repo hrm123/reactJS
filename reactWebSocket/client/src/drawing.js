@@ -11,7 +11,6 @@ export default class Drawing extends Component{
     componentDidMount() {
         
         subscribeToDrawingLines(this.props.drawing.id, (linesEvent) => {
-            debugger;
             this.setState((prevState) => {
                 console.log(linesEvent.lines);
                 return {
@@ -34,7 +33,7 @@ export default class Drawing extends Component{
             <div 
                 className="Drawing"
             >
-                <div className="Drawing-title">{this.props.drawing.name}</div>
+                <div className="Drawing-title">{this.props.drawing.name}({this.state.lines.length})</div>
                 <Canvas drawingEnabled={true}
                 onDraw={this.handleDraw} 
                 width="100%"
