@@ -6,6 +6,11 @@ function subscribeToDrawings(cb) {
   socket.emit('subscribeToDrawings');
 }
 
+function subscribeToDrawingLines(drawingId, cb) {
+  socket.on(`drawingLine:${drawingId}`, cb);
+  socket.emit('subscribeToDrawingLines', drawingId);
+}
+
 function createDrawing(name) {
   socket.emit('createDrawing', { name });
 }
@@ -17,5 +22,6 @@ function publishLine({drawingId, line}){
 export {
   createDrawing,
   subscribeToDrawings,
-  publishLine
+  publishLine,
+  subscribeToDrawingLines
 };

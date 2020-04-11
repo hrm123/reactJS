@@ -23,6 +23,7 @@ class App extends Component {
       </div>
     );
 
+    console.log('this.state.selectedDrawing',this.state.selectedDrawing);
     if(this.state.selectedDrawing) {
       ctrl = (
         <Drawing
