@@ -2,6 +2,7 @@
   "dependencies": {
     "nodemon": "^1.11.0",
     "rethinkdb": "^2.3.3",
+    "rxjs": "^6.5.5",
     "socket.io": "^2.0.3"
   },
   "scripts": {

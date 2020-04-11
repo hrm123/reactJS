@@ -1,6 +1,7 @@
 const r = require('rethinkdb');
 const io = require('socket.io')();
 
+
 function createDrawing({ connection, name }) {
   return r.table('drawings')
   .insert({

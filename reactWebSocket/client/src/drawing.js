@@ -9,12 +9,13 @@ export default class Drawing extends Component{
     }
 
     componentDidMount() {
-        debugger;
-        subscribeToDrawingLines(this.props.drawing.id, (line) => {
+        
+        subscribeToDrawingLines(this.props.drawing.id, (linesEvent) => {
             debugger;
             this.setState((prevState) => {
+                console.log(linesEvent.lines);
                 return {
-                    lines: [...prevState.lines, line]
+                    lines: [...prevState.lines, ...linesEvent.lines]
                 }
             });
         })
