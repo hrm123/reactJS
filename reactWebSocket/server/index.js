@@ -39,10 +39,11 @@ function subscribeToDrawingLines({ client, connection, drawingId, from }) {
   });
 }
 
-function handleLinePublish({ line, connection} ){
+function handleLinePublish({ line, connection, callback} ){
   r.table('lines')
   .insert(Object.assign(line, {timestamp: new Date()}))
-  .run(connection);
+  .run(connection)
+  .then(callback);
 
 }
 
@@ -61,9 +62,10 @@ r.connect({
       connection,
     }));
 
-    client.on('publishLine', (line) => handleLinePublish({
+    client.on('publishLine', (line, callback) => handleLinePublish({
       line,
       connection,
+      callback
     }));
 
     client.on('subscribeToDrawingLines', ({drawingId, from}) => subscribeToDrawingLines({
