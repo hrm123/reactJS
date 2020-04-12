@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import * as admin from 'firebase-admin';
+//import * as firebase from 'firebase';
 const fs = require('fs');
 require('dotenv').config();
 
@@ -22,11 +23,11 @@ admin.initializeApp({
   }); // have to set env param GOOGLE_APPLICATION_CREDENTIALS="C:\Users\username\Downloads\service-account-file.json"
 
  
-  console.log(admin.app().name);  // '[DEFAULT]'
+  console.log('firebase app name', admin.app().name);  // '[DEFAULT]'
     
   // Use the shorthand notation to retrieve the default app's services
   var defaultAuth = admin.auth();
-  var defaultDatabase = admin.database();
+  var todosRef = admin.database().ref().child("todos");
 
 
 let port = 7777;
@@ -49,10 +50,25 @@ app.use(
 );
 
 export const addNewTask = async task => {
+    //todosRef.push().set(task);
+    console.log('task', task);
+    await todosRef.child(task.id).set(task);
+}
 
+export const updateTask = async task => {
+    await todosRef.child(task.id).update(task);
 }
 
 app.post('/task/new', async (req, res) => {
     let task = req.body.task;
+    await addNewTask(task);
+    res.status(200).send();
+});
 
+
+
+app.post('/task/update', async (req, res) => {
+    let task = req.body.task;
+    await updateTask(task);
+    res.status(200).send();
 })
