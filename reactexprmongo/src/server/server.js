@@ -2,17 +2,17 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import * as admin from 'firebase-admin';
+import Firebase from 'firebase';
 //import * as firebase from 'firebase';
 const fs = require('fs');
 require('dotenv').config();
 
-var serviceAccountFileName =  process.env.CERT_FILE;
-// console.log('serviceAccountFileName -',serviceAccountFileName);
 
 let certJson = null;
+let fbJson = null;
 try {
-    certJson = fs.readFileSync(serviceAccountFileName, 'utf8')
-    // console.log(certJson)
+    certJson = fs.readFileSync(process.env.CERT_FILE, 'utf8');
+    fbJson = fs.readFileSync(process.env.FIREBASE_CONFIG_FILE, 'utf8');
   } catch (err) {
     console.error(err)
   }
@@ -22,11 +22,12 @@ admin.initializeApp({
     databaseURL: 'https://mytasks-2df8e.firebaseio.com'
   }); // have to set env param GOOGLE_APPLICATION_CREDENTIALS="C:\Users\username\Downloads\service-account-file.json"
 
+  Firebase.initializeApp(JSON.parse(fbJson));
  
   console.log('firebase app name', admin.app().name);  // '[DEFAULT]'
     
   // Use the shorthand notation to retrieve the default app's services
-  var defaultAuth = admin.auth();
+  var defaultAuth = Firebase.auth();
   var todosRef = admin.database().ref().child("todos");
 
 
@@ -58,6 +59,53 @@ export const addNewTask = async task => {
 export const updateTask = async task => {
     await todosRef.child(task.id).update(task);
 }
+
+export const registerUser = async (email, password) => {
+    await defaultAuth.createUserWithEmailAndPassword(email, password);
+}
+
+export const signinUser = async (email, password) => {
+    return  defaultAuth.signInWithEmailAndPassword(email, password);
+    /*
+    .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+  */
+}
+
+
+// export const authenticateRoute = app => {
+    app.post('/authenticate', async (req, res) => {
+        let {username, password} = req.body;
+        console.log('username',username);
+        try{
+            const res = await signinUser(username, password);
+            console.log('authenticateres', res);
+            res.status(200).send();
+        }
+        catch(e){
+            console.log(e);
+            res.status(500).send("User not found");
+        }
+    });
+// };
+
+app.post('/register', async (req, res) => {
+    let {username, password} = req.body;
+    console.log('username',username);
+    try{
+        const res = await registerUser(username, password);
+        console.log('registerres', res);
+        res.status(200).send();
+    }
+    catch(e){
+        console.log(e);
+        res.status(500).send("User not found");
+    }
+});
 
 app.post('/task/new', async (req, res) => {
     let task = req.body.task;

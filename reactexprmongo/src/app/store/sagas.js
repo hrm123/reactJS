@@ -46,3 +46,49 @@ export function* taskModificationSaga(){
     }
 }
 
+
+
+export function* userAuthenticationSaga(){
+    while(true){
+        const {username, password} = yield take([mutations.REQUEST_AUTHENTICATE_USER])
+       
+        try{
+            const {data} = yield axios.post(url + `/authenticate`, 
+                {username, password}
+            );
+            console.log("Authenticated!")
+            if(!data){
+                throw new Error();
+            }
+        }
+        catch(e){
+            console.log("auth failed" + e);
+            yield put(mutations.processAuthenticateUser(mutations.NOT_AUTHENTICATED_USER))
+        }
+        
+    }
+}
+
+
+export function* userRegistrationSaga(){
+    while(true){
+        const {username, password} = yield take([mutations.REQUEST_REGISTER_USER])
+       
+        try{
+            const {data} = yield axios.post(url + `/authenticate`, 
+                {username, password}
+            );
+            console.log("Authenticated!")
+            if(!data){
+                throw new Error();
+            }
+        }
+        catch(e){
+            console.log("auth failed" + e);
+            yield put(mutations.processRegisterUser(mutations.REGISTER_USER_FAIL))
+        }
+        
+    }
+}
+
+
