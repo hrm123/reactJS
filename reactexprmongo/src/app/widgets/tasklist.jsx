@@ -1,13 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {requestTaskCreation} from '../store/mutations';
+import {Link} from 'react-router-dom';
 
 export const TaskList = ({tasks, name,id, createNewTask}) => (
     <div>
         <h3>{name}</h3>
         <div>
             {tasks.map(t => (
-                <div key={t.id}>{t.name}</div>
+                <Link key={t.id} to={`/task/${t.id}`}>
+                    <div >{t.name}</div>
+                </Link>
             ))
             }
         </div>

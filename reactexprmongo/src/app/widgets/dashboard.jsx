@@ -13,7 +13,6 @@ export const Dashboard = ({groups}) => (
 )
 
 function mapStateToProps(state){
-    debugger;
     return {
         groups: state.groups
     }
