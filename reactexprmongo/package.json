@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
-    "dev": "webpack-dev-server --open",
+    "dev": "webpack-dev-server --open --port 8083",
     "server": "babel-node src/server/server",
-    "server-test": "babel-node src/server/server.spec"
+    "server-test": "babel-node src/server/server.spec",
+    "start-dev": "concurrently \"npm run server\" \"npm run dev\" "
   },
   "keywords": [],
   "author": "",
@@ -20,11 +21,13 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.2",
+    "concurrently": "^4.0.1",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.7"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "dotenv": "^8.2.0",

@@ -5,7 +5,8 @@ import createSagaMiddleware from 'redux-saga';
 import * as mutations from './mutations';
 
 const sagaMiddleware = createSagaMiddleware();
-import * as sagas from './sagas.mock';
+// import * as sagas from './sagas.mock';
+import * as sagas from './sagas';
 
 export const store = createStore(
     combineReducers({
