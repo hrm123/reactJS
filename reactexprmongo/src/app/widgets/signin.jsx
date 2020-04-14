@@ -7,15 +7,14 @@ import * as mutations from '../store/mutations';
 const SigninComponent = ({authenticateUser, authenticated}) => {
     return (
     <div>
-        <h2>Signin here!</h2>
+        <h2>Signon here!</h2>
         <form onSubmit={authenticateUser}>
             <input type="text" placeholder="username" name="username" defaultValue="dev" />
             <input type="password" placeholder="password" name="password" defaultValue="" />
             {authenticated === mutations.NOT_AUTHENTICATED_USER ? 
             <p> Login incorrect</p> : null
             }
-            <button type="submit">SIGNIN</button>
-            <button type="submit">REGISTER</button>
+            <button type="submit">SIGNON</button>
         </form>
         <Link to="/register">
             REGISTER

@@ -56,10 +56,16 @@ export function* userAuthenticationSaga(){
             const {data} = yield axios.post(url + `/authenticate`, 
                 {username, password}
             );
-            console.log("Authenticated!")
+            debugger;
             if(!data){
                 throw new Error();
             }
+            yield put(mutations.setState(data.state));
+            yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED_USER, {
+                id:"U1", // todo... get ID from response
+                token:data.token
+            }));
+            history.push(`/dashboard`);
         }
         catch(e){
             console.log("auth failed" + e);
@@ -75,7 +81,7 @@ export function* userRegistrationSaga(){
         const {username, password} = yield take([mutations.REQUEST_REGISTER_USER])
        
         try{
-            const {data} = yield axios.post(url + `/authenticate`, 
+            const {data} = yield axios.post(url + `/register`, 
                 {username, password}
             );
             console.log("Authenticated!")

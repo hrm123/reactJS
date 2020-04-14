@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import * as mutations from '../store/mutations';
 
 
-const RegisterComponent = ({authenticateUser, authenticated}) => {
+const RegisterComponent = ({authenticateUser, authenticated, registerUser}) => {
     return (
     <div>
         <h2>Register here!</h2>
@@ -16,8 +16,8 @@ const RegisterComponent = ({authenticateUser, authenticated}) => {
             }
             <button type="submit">REGISTER</button>
         </form>
-        <Link to="/signin">
-            SIGNIN
+        <Link to="/">
+            SIGNON
         </Link>
     </div>
     );

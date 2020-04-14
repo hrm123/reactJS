@@ -11,6 +11,7 @@ export const PROCESSING_AUTHENTICATE_USER = 'PROCESSING_AUTHENTICATE_USER';
 export const REQUEST_REGISTER_USER = 'REQUEST_REGISTER_USER';
 export const PROCESSING_REGISTER_USER = 'REQUEST_REGISTER_USER';
 export const REGISTER_USER_FAIL = 'REGISTER_USER_FAIL';
+export const SET_STATE = 'SET_STATE';
 
 export const requestTaskCreation = (groupID) => ({
     type: REQUEST_TASK_CREATION,
@@ -65,6 +66,11 @@ export const processRegisterUser = (status= AUTHENTICATING_USER, session = null)
     type: PROCESSING_REGISTER_USER,
     session,
     authenticated: status
+});
+
+export const setState = (state = {})=>({
+    type:SET_STATE,
+    state
 });
 
 
