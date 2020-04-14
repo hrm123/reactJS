@@ -103,7 +103,11 @@ export const signoutUser = async (email, password) => {
         }
         catch(e){
             console.log(e);
-            res.status(500).send("User not found");
+            if(e.code === 'auth/user-not-found'){
+                res.status(401).send("User not found");
+            } else {
+                res.status(500).send("server error");
+            }
         }
     });
 

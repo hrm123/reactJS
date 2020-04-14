@@ -2,7 +2,7 @@ import {take, put,select} from 'redux-saga/effects';
 import * as mutations from './mutations';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
-
+import { hstory } from './history'
 
 const url = "http://localhost:7777";
 
@@ -60,12 +60,12 @@ export function* userAuthenticationSaga(){
             if(!data){
                 throw new Error();
             }
-            yield put(mutations.setState(data.state));
+            // yield put(mutations.setState({session:{authenticated:`AUTHENTICATED_USER`,id:data.user.email}}));
             yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED_USER, {
-                id:"U1", // todo... get ID from response
-                token:data.token
+                id: data.user.email, // todo... get ID from response
+                token: data.user.stsTokenManager.accessToken
             }));
-            history.push(`/dashboard`);
+            hstory.push(`/dashboard`);
         }
         catch(e){
             console.log("auth failed" + e);

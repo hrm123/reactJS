@@ -11,12 +11,13 @@ import {ConnectedSignin} from './signin';
 import {ConnectedRegister} from './register';
 import {subscribeToUserAuthStatus} from '../apiHelper';
 
-const RouteGaurd = component => ({match}) => {
+const RouteGaurd = Component => ({match}) => {
     console.info("Route gaurd", match);
     if(!store.getState().session.authenticated){
         return <Redirect to="/" />;
     } else{
-        return <component match={match} />;
+        debugger;
+        return <Component match={match} />;
     }
 }
 
