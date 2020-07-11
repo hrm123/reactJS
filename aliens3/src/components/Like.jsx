@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { pathFromBezierCurve } from '../utils/formulas';
 
-const Heart = (props) => {
+const Like = (props) => {
   const heartStyle = {
     fill: '#da0d15',
     stroke: '#a51708',
@@ -52,7 +52,11 @@ const Heart = (props) => {
   };
 
   return (
-    <g filter="url(#shadow)" onClick={heartClick}>
+    <g filter="url(#shadow)"
+     onMouseEnter={() => this.setState({'hover': true})}
+     onMouseLeave={() => this.setState({'hover': false})}
+     onClick={heartClick}
+     >
       <path
         style={heartStyle}
         d={pathFromBezierCurve(leftSide)}
@@ -65,11 +69,11 @@ const Heart = (props) => {
   );
 };
 
-Heart.propTypes = {
+Like.propTypes = {
   position: PropTypes.shape({
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
   }).isRequired,
 };
 
-export default Heart;
+export default Like;

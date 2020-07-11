@@ -11,7 +11,7 @@ import Title from './Title';
 import Leaderboard from './Leaderboard';
 import { signIn } from 'auth0-web';
 import CannonBall from './CannonBall';
-import Heart from './Heart';
+import Like from './Like';
 
 const Canvas = (props) => {
   const gameHeight = 1200;
@@ -23,7 +23,7 @@ const Canvas = (props) => {
       x: -180 - (i * 70),
       y: 35
     };
-    lives.push(<Heart key={i} position={heartPosition} onheartpress={props.heartpress}/>);
+    lives.push(<Like key={i} position={heartPosition} onheartpress={props.heartpress}/>);
   }
 
   return (

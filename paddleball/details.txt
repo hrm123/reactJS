@@ -1,0 +1,25 @@
+DOM works pretty well for old-school 2D, that means using no image rotation or scaling. There are actually tools for both of these jobs, but you can't count on them performing well.
+
+For a game you should rely on the browser layout engine as little as possible, that means use position:absolute to place objects. Try as far as possible not to create and destroy DOM objects all the time, if you need a highly variable number of objects you may want a pool of idle DOM elements set to display:none, ready for being revived when needed.
+
+
+If you are making an HTML5 game, the canvas is by far better. Here's why:
+
+Speed - Think of the canvas as an image. You draw to the image, and then it forgets what you drew. That dramatically increases performance, compared to DOM or SVG. What DOM and SVG applications do is they keep track of every object you place on the screen. That means if you have a large level with many objects on the screen, especially offscreen or hidden, those are drawn and kept track of anyways.
+Drawing features - While DOM elements have powerful CSS3 transformations, that's nothing compared to the canvas's features. The canvas can draw any object, have powerful gradient support, plugins for displaying objects in 3D, filters, etc.
+Support - When using the DOM, when you want to use experimental features like transformations or animations, you have to use the -moz-, -webkit-, -o-, and -ms- prefixes in CSS. In the canvas, you don't need to worry about that. Just draw with one function, and you're done. Another support related advantage of the canvas is how your application displays. As a website developer, the lack of DOM standardization between browsers drives me nuts. Backgrounds, gradients, transformations, etc. display differently between browsers, despite the detailed W3C specifications. In the canvas, I've only run across one thing that might be different - backgrounds. When displaying a tiled background, some browsers will take "tile-x" as center the tile at 0px on the x axis, and others take it as just tile the tile down.
+Libraries and documentation - There are TONS of great libraries on documentations for making games with the canvas. Some libraries: CreateJS, paper.js, fabric.js, KineticJS, libCanvas, Processing.js, PlotKit, Rekapi, PhiloGL, InfoViz Toolkit, Frame-Engine, CAKE, Raphaeljs, Tweenjs, etc. I could list a ton more, but there's no point.
+
+
+Down side - Animation - While there are many great libraries for animation, I love CSS3 animations. Their so easy to create, manipulate, and trigger. There are various hacks to make CSS3 animations work with objects with the canvas, but I suspect most people prefer not to use that method.
+
+If you consider targeting mobile browsers, in particular Android, and the game contains any moving graphics, avoid DOM animation. The stock browser in Android is useless, even though it's webkit. Check out this Android issue thread before you start: "Terrible rendering of CSS3 and Javascript animations in Browser and WebView".
+
+Canvas in itself might not be any faster, but there are frameworks to invoke hardware acceleration for canvas animations, for example CocoonJS. There is a link to a video on the site, showing the performance gains you can achieve by using the framework (but I'm not allowed to post more than two links, for some reason).
+
+WebGL with canvas fallback is even better.
+
+If you consider targeting mobile browsers, in particular Android, and the game contains any moving graphics, avoid DOM animation. The stock browser in Android is useless, even though it's webkit. Check out this Android issue thread before you start: "Terrible rendering of CSS3 and Javascript animations in Browser and WebView".
+
+Canvas in itself might not be any faster, but there are frameworks to invoke hardware acceleration for canvas animations, for example CocoonJS. There is a link to a video on the site, showing the performance gains you can achieve by using the framework (but I'm not allowed to post more than two links, for some reason).
+
