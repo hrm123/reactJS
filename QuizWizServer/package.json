@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "font-awesome": "^4.7.0",
     "prop-types": "^15.6.0",
     "react": "latest",
