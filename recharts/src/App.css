@@ -1,0 +1,11 @@
+.graphgrid {
+  display: flex;
+  flex-direction: column;
+}
+.graphrow {
+  display: flex;
+  flex-direction: row;
+}
+.graphcell{
+  align-self: center;
+}
