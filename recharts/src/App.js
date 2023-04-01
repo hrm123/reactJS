@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Chart from "./barChart";
 import Chart1 from "./barChart1";
 import Chart2 from "./barChart2";
+import Chart3 from "./barChart3";
+import PieChart from "./pie";
 
 
 
@@ -28,7 +30,12 @@ export default function App() {
     <div className="graphrow">
       <Chart2 />
     </div>
-
+    <div className="graphrow">
+      <Chart3 />
+    </div>
+  <div className="graphrow">
+    <PieChart />    
+  </div>
     
     </div>;
 }
