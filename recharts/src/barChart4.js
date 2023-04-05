@@ -27,10 +27,10 @@ ChartJS.register(
 export const options = {
   indexAxis: 'y',
   responsive: true,
-  height:10,
+  // height:10,
   maintainAspectRatio: false,
   aspectRatio: 1,
-  barPercentage: 0.6,
+  // barPercentage: 0.6,
   layout: {
     padding: {right: 40, top: 20},
     autoPadding: false
@@ -43,6 +43,7 @@ export const options = {
     datalabels: {
       anchor: 'end',
       align: 'end',
+      display: false,
       textAlign: 'center',
       padding: 4,
     },
@@ -60,13 +61,13 @@ export const options = {
     y: {
       // stacked: true,
       grid: {display : false},
-      mirror:true,
+      // mirror:true,
       ticks: {
         display: true,
         mirror: true,
-        beginAtZero: true,
-        labelOffset: -6, 
-        min: 0, 
+        // beginAtZero: true,
+        labelOffset: -20, 
+        // min: 0, 
         autoSkip: false
       }
     }
@@ -74,15 +75,14 @@ export const options = {
 };
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
+      // label: 'Dataset 1',
       data: labels.map(() => faker.datatype.number({ min: 100, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      // borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: labels.map(() => `rgba(255, ${faker.datatype.number({ min: 10, max: 100 })}, 132, 0.5)`),
     },
     /* {
       label: 'Dataset 2',
@@ -93,6 +93,7 @@ export const data = {
   ],
 };
 
+//height of bar versus labelOffset offset of y-ticks determine placement of bar label text
 export function BarChart4() {
-  return <Bar options={options} data={data} />;
+  return <Bar options={options} data={data} height={400} />;
 }

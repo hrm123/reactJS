@@ -15,7 +15,7 @@ export default function App() {
     const fetchDatas = async () => {
       const res = await fetch("https://api.coincap.io/v2/assets/?limit=20");
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setdata(data?.data);
     };
     fetchDatas();
@@ -37,7 +37,7 @@ export default function App() {
   <div className="graphrow">
     <PieChart />    
   </div>
-  <div className="classrow">
+  <div className="classrow" style={{height:400}}>
     <BarChart4 />
   </div>
     
