@@ -4,6 +4,7 @@ import Chart1 from "./barChart1";
 import Chart2 from "./barChart2";
 import Chart3 from "./barChart3";
 import PieChart from "./pie";
+import { BarChart4 } from "./barChart4";
 
 
 
@@ -35,6 +36,9 @@ export default function App() {
     </div>
   <div className="graphrow">
     <PieChart />    
+  </div>
+  <div className="classrow">
+    <BarChart4 />
   </div>
     
     </div>;
