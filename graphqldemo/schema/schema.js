@@ -62,8 +62,47 @@ const rootQuery = new graphql.GraphQLObjectType({
 })
 
 
+const mutation = new graphql.GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        addUser: {
+            type: UserType, // data that we will return from resovle function
+            args:{
+                firstName: {type: new graphql.GraphQLNonNull( graphql.GraphQLString )},
+                age: {type: new graphql.GraphQLNonNull(graphql.GraphQLInt)},
+                companyId: {type: graphql.GraphQLString},
+            },
+            resolve(parentValue, {firstName, age} ){
+                return axios.post(`http://localhost:3000/users`, {firstName, age}).then(res => res.data)
+            }
+        },
+        deleteUser: {
+            type: UserType, // data that we will return from resovle function
+            args:{
+                id: {type: new graphql.GraphQLNonNull(graphql.GraphQLString)},
+            },
+            resolve(parentValue, {id} ){
+                return axios.delete(`http://localhost:3000/users/${id}`).then(res => res.data)
+            }
+        },
+        editUser: {
+            type: UserType, // data that we will return from resovle function
+            args:{
+                firstName: {type:  graphql.GraphQLString },
+                age: {type: graphql.GraphQLInt},
+                companyId: {type: graphql.GraphQLString},
+                id: {type: new graphql.GraphQLNonNull(graphql.GraphQLString)},
+            },
+            resolve(parentValue, args ){
+                return axios.patch(`http://localhost:3000/users/${args.id}`, args).then(res => res.data)
+            }
+        },
+    }
+})
+
 module.exports =  new GraphQLSchema({
     query: rootQuery,
+    mutation: mutation
 
 })
 
@@ -112,4 +151,44 @@ sample query
     }
   }
 }
+
+//named query
+query fetchCompany{
+  company(id:"2"){
+    id,name, description
+  }
+}
+
+//multiple records of same type in single query
+query fetchTop2Company{
+  two:company(id:"2"){
+    id,name, description
+  }
+  one:company(id:"1"){
+    id,name, description
+  }
+}
+
+// fragments - DRY
+query fetchTop2Company{
+  two:company(id:"2"){
+    ...companyDetails
+  }
+  one:company(id:"1"){
+    ...companyDetails
+  }
+}
+fragment companyDetails on Company {
+  id, name, description
+}
+
+//mutations - delte / update / create new graphql records
+
+mutation {
+  addUser(firstName: "avh", age:10){
+    id, firstName, age
+  }
+}
+
+
 */
