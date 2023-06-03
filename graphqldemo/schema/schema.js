@@ -103,4 +103,13 @@ sample query
   }
 }
 
+
+//circular nesting
+{
+  company(id:"2"){
+    id,name, description, users {
+      id,firstName,company {name}
+    }
+  }
+}
 */
