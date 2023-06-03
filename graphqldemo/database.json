@@ -1,10 +1,22 @@
 {
   "users": [
     {
+      "id": "1",
+      "firstName": "Racheal",
+      "age": 20,
+      "companyId": "2"
+    },
+    {
       "id": "2",
       "firstName": "Samantha",
       "age": 22,
       "companyId": "2"
+    },
+    {
+      "id": "3",
+      "firstName": "Natashah",
+      "age": 28,
+      "companyId": "1"
     },
     {
       "firstName": "avh",

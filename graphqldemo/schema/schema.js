@@ -190,5 +190,10 @@ mutation {
   }
 }
 
+mutation {
+  editUser(id: "3", firstName: "Natashah"){
+    id, firstName, age
+  }
+}
 
 */
