@@ -8,6 +8,7 @@ exports.handler = async function(event) {
     query {
         movies_by_genre(
                   value: {genre: ${JSON.stringify(body.genre)}},
+                  options: {limit: 4},
                   orderBy: [year_DESC]
               ){
                   values {
@@ -38,7 +39,7 @@ exports.handler = async function(event) {
         }
     }
     catch(err){
-        console.log(err)
+        console.error(err)
         return {
             statusCode: 500,
             body: JSON.stringify

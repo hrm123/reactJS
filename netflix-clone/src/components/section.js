@@ -1,8 +1,8 @@
 
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { Card } from './card';
 
-export const Section = ({genre }) => {
+export const SectionClass = ({genre }) => {
 
     
   const [movies, setMovies] = useState(null)
@@ -22,7 +22,7 @@ export const Section = ({genre }) => {
   },[])
 
 
-    return (<><div>
+    return (<><div className="genre">
         {genre}
     </div>
     {
@@ -35,3 +35,5 @@ export const Section = ({genre }) => {
     }
     </>)
 }
+
+export const Section = memo(SectionClass)
