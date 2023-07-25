@@ -6,20 +6,32 @@ export const SectionClass = ({genre }) => {
 
     
   const [movies, setMovies] = useState(null)
-
+  const [pageState, setPageState] = useState(null)
+  const [fetchNext, setFetchNext] = useState(1)
 
   const fetchMovies = async () => {
     const response = await fetch('http://localhost:8888/.netlify/functions/getMovies',{
         method: "POST",
-        body: JSON.stringify({genre})
+        body: JSON.stringify({genre, pageState: pageState})
     })
     const responseBody = await response.json()
-    setMovies(responseBody.data.movies_by_genre.values)
+    return responseBody
+    
   }
 
   useEffect(() => {
-    fetchMovies()
-  },[])
+    fetchMovies().then(response =>{
+      if(response.data){
+        console.log('data=', response)
+        setMovies(response.data.movies_by_genre.values)
+        setPageState(response.data.movies_by_genre.pageState)
+      }
+      else{
+        console.log('error=', response)
+      }
+
+    })
+  },[fetchNext])
 
 
     return (<><div className="genre">
@@ -31,6 +43,15 @@ export const SectionClass = ({genre }) => {
                 {movies.map((movie, index) => (
                     <Card movie={movie} key={index} />
                 ))}
+                <div
+                  className="more-button"
+                  onClick={() => {
+                    setPageState(pageState)
+                    setFetchNext(fetchNext+1)
+                  }}
+                >
+                  <i className="fa fa-angle-right"></i>
+                </div>
             </div>)
     }
     </>)
