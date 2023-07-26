@@ -22,7 +22,6 @@ export const SectionClass = ({genre }) => {
   useEffect(() => {
     fetchMovies().then(response =>{
       if(response.data){
-        console.log('data=', response)
         setMovies(response.data.movies_by_genre.values)
         setPageState(response.data.movies_by_genre.pageState)
       }
@@ -40,9 +39,10 @@ export const SectionClass = ({genre }) => {
     {
         movies && 
             (<div className="movie-section">
-                {movies.map((movie, index) => (
-                    <Card movie={movie} key={index} />
-                ))}
+                {movies.map((movie, index) => {
+            return (index==0 && genre=="Dramas") ? <Card key={index} movie={movie} focus={true} />
+            : <Card key={index} movie={movie} focus={false}  />
+            })}
                 <div
                   className="more-button"
                   onClick={() => {

@@ -16,17 +16,18 @@ export const OldCard = ({movie }) => {
     </>)
 }
 
-export const Card = ({movie}) => {
+export const Card = ({movie, focus}) => {
     const [isShown, setIsShown] = useState(false)
-
+  console.log(focus)
     return (
       <div
         className="card"
+        autoFocus={focus}
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >
         {!isShown && (
-          <video className="video" controls autoplay={false}>
+          <video className="video" controls autoPlay={false}>
             <source src={movie.thumbnail} type="video/mp4" />
           </video>
         )}

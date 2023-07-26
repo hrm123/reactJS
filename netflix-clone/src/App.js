@@ -27,7 +27,6 @@ function App() {
 
   useEffect(() => {
     // 👇️ listen for changes
-    console.log('isInViewport1', isInViewport1);
     if(isInViewport1){
     if(!limitReached){
       setLimit(limit + genreIncrement)
@@ -36,7 +35,6 @@ function App() {
   }, [isInViewport1]);
 
   useEffect(() => {
-    console.log('limit', limit)
     fetchMovies(limit).then(values =>{
     if(values.length < limit) {
       setLimitReached(true)

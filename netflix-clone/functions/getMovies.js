@@ -5,7 +5,6 @@ exports.handler = async function(event) {
     const url = process.env.ASTRA_GRAPHQL_ENDPOINT
     const body = JSON.parse(event.body)
     const pageState = body.pageState
-    console.log('pageState', pageState)
     const query  = `
     query {
         movies_by_genre(
