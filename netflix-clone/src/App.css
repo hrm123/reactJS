@@ -33,9 +33,8 @@ body{
 
 video {
   width: 100%;
-  height: 240px;
   border-radius: 5px;
-
+  display: block;
 }
 
 video::-webkit-media-controls {
@@ -56,16 +55,23 @@ video::-webkit-media-controls {
 }
 */
 
+/*
+.video:focus,
+.video:hover{
+  transform: scale(1.2)
+}
+*/
+
 .movie-section .card:first-child:focus,
 .movie-section .card:first-child:hover {
-  transform: translateX(25%) scale(1.5);
+  transform: translateX(88%) scale(2.8);
   z-index: 1;
   background: black;
 }
 
 .movie-section .card:not(:first-child):focus,
 .movie-section .card:not(:first-child):hover {
-  transform: scale(1.5);
+  transform: scale(2.8);
   z-index: 1;
   background: black;
 }
@@ -86,5 +92,4 @@ video::-webkit-media-controls {
   width: 100%;
   color:red;
   font-size: larger;
-  padding: 10px;
 }
