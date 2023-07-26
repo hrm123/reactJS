@@ -34,7 +34,7 @@ export const SectionClass = ({genre }) => {
   },[fetchNext])
 
 
-    return (<><div className="genre">
+    return (<><div className="genre" id={genre}>
         {genre}
     </div>
     {

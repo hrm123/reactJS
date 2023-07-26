@@ -2,6 +2,8 @@ import { memo, useEffect, useRef, useState } from 'react';
 import './App.css';
 import { Section } from './components/section';
 import { useIsInViewport } from './hooks/useIsInViewport';
+import NavBar from './components/navBar'
+import HeroSection from './components/heroSection'
 
 
 const fetchMovies = async function(limit) {
@@ -46,7 +48,14 @@ function App() {
 
   return (
     <>
-      {genres && (genres.map((genre, index) => (<Section key={index} genre={genre.value}/>)))}
+    <NavBar />
+    <HeroSection />
+      {genres && (
+        <div className="container">
+        {genres.map((genre, index) => (<Section key={index} genre={genre.value}/>))}
+        </div>
+        )
+        }
       <div className="page-end" ref={refPageEnd} />
     </>
   )
