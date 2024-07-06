@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "San Diego",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "CA",
+				"name": "California"
+			},
+			"timezone": "America/Los_Angeles",
+			"latitude": 32.7203,
+			"longitude": -117.1552
+		},
+		"timestamp": 1690337399076
+	}
+}
