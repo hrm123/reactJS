@@ -1,0 +1,1 @@
+npm create vite@latest storybook_demo -- --template react-ts
