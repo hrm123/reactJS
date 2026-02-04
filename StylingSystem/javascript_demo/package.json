@@ -1,0 +1,20 @@
+{
+  "name": "javascript_demo",
+  "version": "1.0.0",
+  "description": "javascript typescript code",
+  "main": "testCode.js",
+  "scripts": {
+    "test": "npm run test",
+    "build": "tsc -b",
+    "start": "node dist/testCode.js",
+    "dev": "ts-node src/testCode.ts",
+    "dev-jsonCompleter": "ts-node src/testJsonLint.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

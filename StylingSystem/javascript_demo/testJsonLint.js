@@ -1,16 +1,9 @@
-import { JsonCompleter } from './jsonLint';
-
-const completer = new JsonCompleter();
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var jsonLint_1 = require("./jsonCompleter");
+var completer = new jsonLint_1.JsonCompleter();
 console.log("Starting JsonCompleter Tests...\n");
-
-type TestCase = {
-    name: string;
-    input: string;
-    expected: string;
-};
-
-const testCases: TestCase[] = [
+var testCases = [
     // 1. Basic incomplete value
     {
         name: "Incomplete value (key-value pair)",
@@ -96,33 +89,30 @@ const testCases: TestCase[] = [
         expected: '{"a":"unknown_value"}'
     }
 ];
-
-let checksPassed = 0;
-let checksFailed = 0;
-
-testCases.forEach((test, i) => {
-    let result = "";
+var checksPassed = 0;
+var checksFailed = 0;
+testCases.forEach(function (test, i) {
+    var result = "";
     try {
         result = completer.complete(test.input);
-    } catch (e) {
-        result = `ERROR: ${e}`;
     }
-
+    catch (e) {
+        result = "ERROR: ".concat(e);
+    }
     if (result === test.expected) {
-        console.log(`[PASS] Test ${i + 1}: ${test.name}`);
+        console.log("[PASS] Test ".concat(i + 1, ": ").concat(test.name));
         checksPassed++;
-    } else {
-        console.log(`[FAIL] Test ${i + 1}: ${test.name}`);
-        console.log(`   Input:    ${test.input}`);
-        console.log(`   Expected: ${test.expected}`);
-        console.log(`   Actual:   ${result}`);
+    }
+    else {
+        console.log("[FAIL] Test ".concat(i + 1, ": ").concat(test.name));
+        console.log("   Input:    ".concat(test.input));
+        console.log("   Expected: ".concat(test.expected));
+        console.log("   Actual:   ".concat(result));
         // Partial primitive hack: if we didn't implement replacement yet, it might return {"a":tru}
         checksFailed++;
     }
 });
-
-console.log(`\nSummary: ${checksPassed} passed, ${checksFailed} failed.`);
-
+console.log("\nSummary: ".concat(checksPassed, " passed, ").concat(checksFailed, " failed."));
 if (checksFailed > 0) {
     throw new Error("Tests Failed");
 }
