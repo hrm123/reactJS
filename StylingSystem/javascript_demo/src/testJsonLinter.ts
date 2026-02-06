@@ -10,7 +10,7 @@ type TestCase = {
 };
 
 
-const testCasesFinal: TestCase[] = [
+const testCases: TestCase[] = [
     // 0. correct JSON
     {
         name: "Correct JSON",
@@ -33,7 +33,7 @@ const testCasesFinal: TestCase[] = [
     {
         name: "Key without value (no colon)",
         input: '{"key1"',
-        expected: '{"unknown_key":"unknown_value"}'
+        expected: '{"key1":"unknown_value"}'
     },
     // 4. Key without value (colon present)
     {
@@ -47,7 +47,7 @@ const testCasesFinal: TestCase[] = [
     {
         name: "Partial key (quoted end)",
         input: '{"key1":{"key2"',
-        expected: '{"key1":{"unknown_key":"unknown_value"}}'
+        expected: '{"key1":{"key2":"unknown_value"}}'
     },
     // 6. Valid JSON
     {
@@ -106,14 +106,6 @@ const testCasesFinal: TestCase[] = [
 let checksPassed = 0;
 let checksFailed = 0;
 
-const testCases: TestCase[] = [
-    // 1. Basic incomplete value
-    {
-        name: "Incomplete value (key-value pair)",
-        input: '{"key1":{"key2":"value2',
-        expected: '{"key1":{"key2":"value2"}}'
-    }
-];
 
 
 
